@@ -1354,6 +1354,51 @@
       ]
     },
     {
+      "description": "Opt-(Shift-)Tab to Cmd-(Shift-)Tab (Select Next(Previous) App), 次(前)のアプリを表示)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "tab",
+            "modifiers": {
+              "mandatory": [
+                "option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "tab",
+              "modifiers": [
+                "command"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "tab",
+            "modifiers": {
+              "mandatory": [
+                "option",
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "tab",
+              "modifiers": [
+                "command",
+                "shift"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "description": "Ctrl-N(P) to Cmd-Opt-Right(Left) (Select Next(Previous) Tab), 次(前)のタブを表示)",
       "extra_descriptions": [
         "For Finder, Preview and Safari",
