@@ -22,9 +22,18 @@
               ]
             }
           },
-          "to": [
+          "parameters": {
+            "basic.to_if_alone_timeout_milliseconds": 250,
+            "basic.to_if_held_down_threshold_milliseconds": 250
+          },
+          "to_if_alone": [
             {
               "key_code": "grave_accent_and_tilde"
+            }
+          ],
+          "to_if_held_down": [
+            {
+              "key_code": "escape"
             }
           ],
           "conditions": [
@@ -2355,7 +2364,7 @@
       ]
     },
     {
-      "description": "Mouse cursor move",
+      "description": "Mouse cursor move with AppleScript",
       "extra_descriptions": [
         "Need [rcmdnk/AppleScript](https://github.com/rcmdnk/AppleScript) to be installed.",
         "Need to enable Mouse Key from System Preferences&rarr;Accessibility&rarr;Mouse and Trackpad."
@@ -2426,6 +2435,141 @@
           "to": [
             {
               "shell_command": "osascript ~/Library/Scripts/mouseMoveRight.scpt"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "n",
+            "modifiers": {
+              "mandatory": [
+                "control",
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "pointing_button": "button1"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "m",
+            "modifiers": {
+              "mandatory": [
+                "control",
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "pointing_button": "button3"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "p",
+            "modifiers": {
+              "mandatory": [
+                "control",
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "pointing_button": "button2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Mouse cursor move using Karabiner's functions",
+      "extra_descriptions": [
+        "Mouse move using Karabiner's functions"
+      ],
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "h",
+            "modifiers": {
+              "mandatory": [
+                "control",
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "mouse_key": {
+                "x": -1536
+              }
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "j",
+            "modifiers": {
+              "mandatory": [
+                "control",
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "mouse_key": {
+                "y": 1536
+              }
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "k",
+            "modifiers": {
+              "mandatory": [
+                "control",
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "mouse_key": {
+                "y": -1536
+              }
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "l",
+            "modifiers": {
+              "mandatory": [
+                "control",
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "mouse_key": {
+                "x": 1536
+              }
             }
           ]
         },

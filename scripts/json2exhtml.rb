@@ -49,6 +49,9 @@ data["rules"].each do |rule|
                           from["modifiers"]["mandatory"] : []
 
       to = manipulator["to"]
+      if not to
+        next
+      end
       to_keys = []
       to_modifiers = []
       to.each do |t|

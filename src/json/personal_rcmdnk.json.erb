@@ -15,7 +15,12 @@
         {
           "type": "basic",
           "from": <%= from("escape", [], ["any"]) %>,
-          "to": <%= to([["grave_accent_and_tilde"]]) %>,
+          "parameters": {
+            "basic.to_if_alone_timeout_milliseconds": 250,
+            "basic.to_if_held_down_threshold_milliseconds": 250
+          },
+          "to_if_alone": <%= to([["grave_accent_and_tilde"]]) %>,
+          "to_if_held_down": <%= to([["escape"]]) %>,
           "conditions": [ <%= device_if("hhkb") %>, <%= frontmost_application_if("emacs_key_bindings_exception") %> ]
         }
       ]
@@ -309,7 +314,7 @@
       <%# -------------------------------------------------- %>
       <%# Need to enable Mouse Key from System Preferences (Accessibility->Mouse and Trackpad) %>
       <%# -------------------------------------------------- %>
-      "description": "Mouse cursor move",
+      "description": "Mouse cursor move with AppleScript",
       "extra_descriptions": [
         "Need [rcmdnk/AppleScript](https://github.com/rcmdnk/AppleScript) to be installed.",
         "Need to enable Mouse Key from System Preferences&rarr;Accessibility&rarr;Mouse and Trackpad."
@@ -325,6 +330,33 @@
         mousekeys.each do |k, v|
           mousekeys[k] = {"shell_command": "osascript ~/Library/Scripts/#{v}.scpt"}
         end
+
+        manipulators = each_key(
+          source_keys_list: mousekeys.keys,
+          from_mandatory_modifiers: ["control", "shift"],
+          dest_keys_list: mousekeys.values
+        )
+        manipulators += each_key(
+          source_keys_list: ["n", "m", "p"],
+          from_mandatory_modifiers: ["control", "shift"],
+          dest_keys_list: ["button1", "button3", "button2"]
+        )
+        JSON.generate(manipulators)
+      %>
+    },
+    {
+      "description": "Mouse cursor move using Karabiner's functions",
+      "extra_descriptions": [
+        "Mouse move using Karabiner's functions"
+      ],
+      "manipulators":
+      <%=
+        mousekeys = {
+          "h"=>{"mouse_key": {"x": -1536}},
+          "j"=>{"mouse_key": {"y": 1536}},
+          "k"=>{"mouse_key": {"y": -1536}},
+          "l"=>{"mouse_key": {"x": 1536}}
+        }
 
         manipulators = each_key(
           source_keys_list: mousekeys.keys,
