@@ -2828,26 +2828,6 @@
             "key_code": "spacebar",
             "modifiers": {
               "mandatory": [
-                "control"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "spacebar",
-              "modifiers": [
-                "option",
-                "control"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "spacebar",
-            "modifiers": {
-              "mandatory": [
                 "command"
               ]
             }
@@ -2856,7 +2836,6 @@
             {
               "key_code": "spacebar",
               "modifiers": [
-                "option",
                 "control"
               ]
             }

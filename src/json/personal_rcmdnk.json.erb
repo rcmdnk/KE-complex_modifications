@@ -435,13 +435,8 @@
         <%# IME %>
         {
           "type": "basic",
-          "from": <%= from("spacebar", ["control"]) %>,
-          "to": <%= to([["spacebar", ["option", "control"]]]) %>
-        },
-        {
-          "type": "basic",
           "from": <%= from("spacebar", ["command"]) %>,
-          "to": <%= to([["spacebar", ["option", "control"]]]) %>
+          "to": <%= to([["spacebar", ["control"]]]) %>
         },
         <%# Mission Control %>
         {
