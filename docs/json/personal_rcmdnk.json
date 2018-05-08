@@ -101,9 +101,6 @@
             "modifiers": {
               "mandatory": [
                 "command"
-              ],
-              "optional": [
-                "shift"
               ]
             }
           },
@@ -131,9 +128,6 @@
             "modifiers": {
               "mandatory": [
                 "command"
-              ],
-              "optional": [
-                "shift"
               ]
             }
           },
@@ -161,9 +155,6 @@
             "modifiers": {
               "mandatory": [
                 "command"
-              ],
-              "optional": [
-                "shift"
               ]
             }
           },
@@ -191,9 +182,6 @@
             "modifiers": {
               "mandatory": [
                 "command"
-              ],
-              "optional": [
-                "shift"
               ]
             }
           },
@@ -221,9 +209,6 @@
             "modifiers": {
               "mandatory": [
                 "command"
-              ],
-              "optional": [
-                "shift"
               ]
             }
           },
@@ -251,9 +236,6 @@
             "modifiers": {
               "mandatory": [
                 "command"
-              ],
-              "optional": [
-                "shift"
               ]
             }
           },
@@ -281,9 +263,6 @@
             "modifiers": {
               "mandatory": [
                 "command"
-              ],
-              "optional": [
-                "shift"
               ]
             }
           },
@@ -311,9 +290,6 @@
             "modifiers": {
               "mandatory": [
                 "command"
-              ],
-              "optional": [
-                "shift"
               ]
             }
           },
@@ -341,9 +317,6 @@
             "modifiers": {
               "mandatory": [
                 "command"
-              ],
-              "optional": [
-                "shift"
               ]
             }
           },
@@ -371,9 +344,6 @@
             "modifiers": {
               "mandatory": [
                 "command"
-              ],
-              "optional": [
-                "shift"
               ]
             }
           },
@@ -401,9 +371,6 @@
             "modifiers": {
               "mandatory": [
                 "command"
-              ],
-              "optional": [
-                "shift"
               ]
             }
           },
@@ -431,9 +398,6 @@
             "modifiers": {
               "mandatory": [
                 "command"
-              ],
-              "optional": [
-                "shift"
               ]
             }
           },
@@ -461,9 +425,6 @@
             "modifiers": {
               "mandatory": [
                 "command"
-              ],
-              "optional": [
-                "shift"
               ]
             }
           },
@@ -491,9 +452,6 @@
             "modifiers": {
               "mandatory": [
                 "command"
-              ],
-              "optional": [
-                "shift"
               ]
             }
           },
@@ -521,9 +479,6 @@
             "modifiers": {
               "mandatory": [
                 "command"
-              ],
-              "optional": [
-                "shift"
               ]
             }
           },
@@ -551,9 +506,6 @@
             "modifiers": {
               "mandatory": [
                 "command"
-              ],
-              "optional": [
-                "shift"
               ]
             }
           },
@@ -581,9 +533,6 @@
             "modifiers": {
               "mandatory": [
                 "command"
-              ],
-              "optional": [
-                "shift"
               ]
             }
           },
@@ -611,9 +560,6 @@
             "modifiers": {
               "mandatory": [
                 "command"
-              ],
-              "optional": [
-                "shift"
               ]
             }
           },
@@ -641,9 +587,6 @@
             "modifiers": {
               "mandatory": [
                 "command"
-              ],
-              "optional": [
-                "shift"
               ]
             }
           },
@@ -671,9 +614,6 @@
             "modifiers": {
               "mandatory": [
                 "command"
-              ],
-              "optional": [
-                "shift"
               ]
             }
           },
@@ -701,9 +641,6 @@
             "modifiers": {
               "mandatory": [
                 "command"
-              ],
-              "optional": [
-                "shift"
               ]
             }
           },
@@ -731,9 +668,6 @@
             "modifiers": {
               "mandatory": [
                 "command"
-              ],
-              "optional": [
-                "shift"
               ]
             }
           },
@@ -761,9 +695,6 @@
             "modifiers": {
               "mandatory": [
                 "command"
-              ],
-              "optional": [
-                "shift"
               ]
             }
           },
@@ -2358,134 +2289,6 @@
           "to": [
             {
               "shell_command": "osascript ~/Library/Scripts/windowResizeWidthPlus.scpt"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "description": "Mouse cursor move with AppleScript",
-      "extra_descriptions": [
-        "Need [rcmdnk/AppleScript](https://github.com/rcmdnk/AppleScript) to be installed.",
-        "Need to enable Mouse Key from System Preferences&rarr;Accessibility&rarr;Mouse and Trackpad."
-      ],
-      "manipulators": [
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "h",
-            "modifiers": {
-              "mandatory": [
-                "control",
-                "shift"
-              ]
-            }
-          },
-          "to": [
-            {
-              "shell_command": "osascript ~/Library/Scripts/mouseMoveLeft.scpt"
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "j",
-            "modifiers": {
-              "mandatory": [
-                "control",
-                "shift"
-              ]
-            }
-          },
-          "to": [
-            {
-              "shell_command": "osascript ~/Library/Scripts/mouseMoveDown.scpt"
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "k",
-            "modifiers": {
-              "mandatory": [
-                "control",
-                "shift"
-              ]
-            }
-          },
-          "to": [
-            {
-              "shell_command": "osascript ~/Library/Scripts/mouseMoveUp.scpt"
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "l",
-            "modifiers": {
-              "mandatory": [
-                "control",
-                "shift"
-              ]
-            }
-          },
-          "to": [
-            {
-              "shell_command": "osascript ~/Library/Scripts/mouseMoveRight.scpt"
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "n",
-            "modifiers": {
-              "mandatory": [
-                "control",
-                "shift"
-              ]
-            }
-          },
-          "to": [
-            {
-              "pointing_button": "button1"
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "m",
-            "modifiers": {
-              "mandatory": [
-                "control",
-                "shift"
-              ]
-            }
-          },
-          "to": [
-            {
-              "pointing_button": "button3"
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "p",
-            "modifiers": {
-              "mandatory": [
-                "control",
-                "shift"
-              ]
-            }
-          },
-          "to": [
-            {
-              "pointing_button": "button2"
             }
           ]
         }

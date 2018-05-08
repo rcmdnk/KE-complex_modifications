@@ -40,7 +40,6 @@
         each_key(
           source_keys_list: iterm2Keys,
           from_mandatory_modifiers: ["command"],
-          from_optional_modifiers: ["shift"],
           dest_keys_list: iterm2Keys,
           to_modifiers: ["option"],
           conditions: [frontmost_application_if("iterm2", false)],
@@ -309,40 +308,6 @@
           manipulators
         %>
       ]
-    },
-    {
-      <%# -------------------------------------------------- %>
-      <%# Need to enable Mouse Key from System Preferences (Accessibility->Mouse and Trackpad) %>
-      <%# -------------------------------------------------- %>
-      "description": "Mouse cursor move with AppleScript",
-      "extra_descriptions": [
-        "Need [rcmdnk/AppleScript](https://github.com/rcmdnk/AppleScript) to be installed.",
-        "Need to enable Mouse Key from System Preferences&rarr;Accessibility&rarr;Mouse and Trackpad."
-      ],
-      "manipulators":
-      <%=
-        mousekeys = {
-          "h"=>"mouseMoveLeft",
-          "j"=>"mouseMoveDown",
-          "k"=>"mouseMoveUp",
-          "l"=>"mouseMoveRight"
-        }
-        mousekeys.each do |k, v|
-          mousekeys[k] = {"shell_command": "osascript ~/Library/Scripts/#{v}.scpt"}
-        end
-
-        manipulators = each_key(
-          source_keys_list: mousekeys.keys,
-          from_mandatory_modifiers: ["control", "shift"],
-          dest_keys_list: mousekeys.values
-        )
-        manipulators += each_key(
-          source_keys_list: ["n", "m", "p"],
-          from_mandatory_modifiers: ["control", "shift"],
-          dest_keys_list: ["button1", "button3", "button2"]
-        )
-        JSON.generate(manipulators)
-      %>
     },
     {
       "description": "Mouse cursor move using Karabiner's functions",
