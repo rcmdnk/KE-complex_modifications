@@ -16,7 +16,10 @@
     {
       "description": "Vim emulation: Simultaneous jk to toggle normal-insert mode",
       "extra_description_level": 1,
-      "manipulators": <%= vim_emu_simul("j", "k", hash_to([["down_arrow"]]), hash_to([["down_arrow", ["shift"]]]), true) %>
+      "manipulators": <%= vim_emu_simul(
+        "j", hash_to([["down_arrow"]]), hash_to([["down_arrow", ["shift"]]]),
+        "k", hash_to([["up_arrow"]]), hash_to([["up_arrow", ["shift"]]]),
+        true) %>
     },
     {
       "description": "Vim emulation: Simultaneous sd to toggle normal-insert mode",
@@ -24,11 +27,10 @@
       "manipulators":
       <%=
         vim_emu_simul(
-          "s",
-          "d",
-          hash_to([["right_arrow", ["shift"]], ["x", ["command"]]]) + vim_emu_mode(line: 0),
-          hash_to([["x", ["command"]]]) + vim_emu_mode(line: 0),
-          true
+          "s", hash_to([["right_arrow", ["shift"]], ["x", ["command"]]]) + vim_emu_mode(line: 0), hash_to([["x", ["command"]]]) + vim_emu_mode(line: 0),
+          "d", vim_emu_mode(d: 1), hash_to([["x", ["command"]]]) + vim_emu_mode(normal: 1, line: 0),
+          true,
+          [{"type": "variable_unless", "name": "vim_emu_d", "value": 1}],
         )
       %>
     },

@@ -545,52 +545,51 @@ def vim_emu_esc(source_keys_list, as_json=false)
   make_data(data, as_json)
 end
 
-def vim_emu_simul(key1, key2, key1_normal, key1_visual, as_json=false)
+def vim_emu_simul(key1, key1_normal, key1_visual, key2, key2_normal, key2_visual, as_json=false, conditions=[])
   dest_keys_list = [{"set_variable": {"name": "vim_emu_simul", "value": 1}}]
   to_after_key_up = [{"set_variable": {"name": "vim_emu_simul", "value": 0}}]
   data = []
   data += vim_emu(
-    source_keys_list: key1,
-    dest_keys_list: dest_keys_list,
-    to_if_alone: key1_normal,
+    source_keys_list: [key1, key2],
+    dest_keys_list: [dest_keys_list, dest_keys_list],
+    to_if_alone: [key1_normal, key2_normal],
     to_after_key_up: to_after_key_up,
+    conditions: [{"type": "variable_unless", "name": "vim_emu_simul", "value": 1}] + conditions,
     mode: ["normal"],
   )
   data += vim_emu(
-    source_keys_list: key1,
-    dest_keys_list: dest_keys_list,
-    to_if_alone: key1_visual,
+    source_keys_list: [key1, key2],
+    dest_keys_list: [dest_keys_list, dest_keys_list],
+    to_if_alone: [key1_visual, key2_visual],
     to_after_key_up: to_after_key_up,
+    conditions: [{"type": "variable_unless", "name": "vim_emu_simul", "value": 1}] + conditions,
     mode: ["visual", "visual_line"],
   )
   data += vim_emu(
-    source_keys_list: key1,
-    dest_keys_list: dest_keys_list,
-    to_if_alone: hash_to([[key1]]),
+    source_keys_list: [key1, key2],
+    dest_keys_list: [dest_keys_list, dest_keys_list],
+    to_if_alone: [hash_to([[key1]]), hash_to([[key2]])],
     to_after_key_up: to_after_key_up,
-    conditions: [{"type": "variable_unless", "name": "vim_emu_insert", "value": 0}],
+    conditions: [{"type": "variable_unless", "name": "vim_emu_simul", "value": 1}] + conditions,
     mode: "",
   )
 
   data += vim_emu(
-    source_keys_list: key2,
-    dest_keys_list: vim_emu_mode(),
+    source_keys_list: [key1, key2],
+    dest_keys_list: [vim_emu_mode(), vim_emu_mode()],
     conditions: [{"type": "variable_if", "name": "vim_emu_simul", "value": 1}],
     mode: ["normal"],
   )
   data += vim_emu(
-    source_keys_list: key2,
-    dest_keys_list: [["left_arrow"]] + vim_emu_mode(normal: 1),
+    source_keys_list: [key1, key2],
+    dest_keys_list: [[["left_arrow"]] + vim_emu_mode(normal: 1), [["left_arrow"]] + vim_emu_mode(normal: 1)],
     conditions: [{"type": "variable_if", "name": "vim_emu_simul", "value": 1}],
     mode: ["visual", "visual_line"],
   )
   data += vim_emu(
-    source_keys_list: key2,
-    dest_keys_list: vim_emu_mode(normal: 1),
-    conditions: [
-      {"type": "variable_if", "name": "vim_emu_simul", "value": 1},
-      {"type": "variable_unless", "name": "vim_emu_insert", "value": 0},
-    ],
+    source_keys_list: [key1, key2],
+    dest_keys_list: [vim_emu_mode(normal: 1), vim_emu_mode(normal: 1)],
+    conditions: [{"type": "variable_if", "name": "vim_emu_simul", "value": 1}],
     mode: "",
   )
 
