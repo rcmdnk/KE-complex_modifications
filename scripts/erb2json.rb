@@ -82,7 +82,7 @@ def hash_to(events, repeat=1)
   to(events, false, repeat)
 end
 
-def each_key(source_keys_list: :source_keys_list, dest_keys_list: :dest_keys_list, from_mandatory_modifiers: [], from_optional_modifiers: [], to_pre_events: [], to_modifiers: [], to_post_events: [], to_if_alone: [], to_after_key_up: [], conditions: [], as_json: false)
+def each_key(source_keys_list: :source_keys_list, dest_keys_list: :dest_keys_list, from_mandatory_modifiers: [], from_optional_modifiers: [], to_pre_events: [], to_modifiers: [], to_post_events: [], to_if_alone: [], to_after_key_up: [], to_delayed_action: [], conditions: [], as_json: false)
   unless source_keys_list.is_a? Array
     source_keys_list = [source_keys_list]
     dest_keys_list = [dest_keys_list]
@@ -123,6 +123,7 @@ def each_key(source_keys_list: :source_keys_list, dest_keys_list: :dest_keys_lis
     d['to'] = hash_to(events)
     d['to_if_alone'] = to_if_alone[index] if (to_if_alone[index] and to_if_alone[index].size != 0)
     d['to_after_key_up'] = to_after_key_up unless to_after_key_up.size == 0
+    d['to_delayed_action'] = to_delayed_action unless to_delayed_action.size == 0
 
     if conditions.any?
       d['conditions'] = []
@@ -376,7 +377,7 @@ def input_source_unless(input_source_aliases, as_json=true)
   input_source('input_source_unless', input_source_aliases, as_json)
 end
 
-def vim_emu(source_keys_list: :source_keys_list, dest_keys_list: :dest_keys_list, from_mandatory_modifiers: [], from_optional_modifiers: [], to_pre_events: [], to_modifiers: [], to_post_events: [], to_if_alone: [], to_after_key_up: [], conditions: "", as_json: false, mode: "", move: 0)
+def vim_emu(source_keys_list: :source_keys_list, dest_keys_list: :dest_keys_list, from_mandatory_modifiers: [], from_optional_modifiers: [], to_pre_events: [], to_modifiers: [], to_post_events: [], to_if_alone: [], to_after_key_up: [], to_delayed_action: [], conditions: "", as_json: false, mode: "", move: 0)
   unless source_keys_list.is_a? Array
     source_keys_list = [source_keys_list]
     dest_keys_list = [dest_keys_list]
@@ -459,6 +460,7 @@ def vim_emu(source_keys_list: :source_keys_list, dest_keys_list: :dest_keys_list
         to_post_events: to_post_events,
         to_if_alone: to_if_alone,
         to_after_key_up: to_after_key_up,
+        to_delayed_action: to_delayed_action,
         conditions: conditions_repeat,
         as_json: false
       )
@@ -563,6 +565,79 @@ def vim_emu_simul(key1, key2, as_json=false)
     mode: "",
   )
 
+  make_data(data, as_json)
+end
+
+def vim_emu_double(key1, as_json=false)
+  data = []
+  data += vim_emu(
+    source_keys_list: key1,
+    dest_keys_list: vim_emu_mode(),
+    "conditions": [
+      {
+        "type": "variable_if",
+        "name": key1 + " pressed",
+        "value": 1,
+      },
+    ],
+    mode: ["normal"],
+  )
+  data += vim_emu(
+    source_keys_list: key1,
+    dest_keys_list: [["left_arrow"]] + vim_emu_mode(normal: 1),
+    "conditions": [
+      {
+        "type": "variable_if",
+        "name": key1 + " pressed",
+        "value": 1,
+      },
+    ],
+    mode: ["visual", "visual_line"],
+  )
+  data += vim_emu(
+    source_keys_list: key1,
+    dest_keys_list: vim_emu_mode(normal: 1),
+    "conditions": [
+      {
+        "type": "variable_if",
+        "name": key1 + " pressed",
+        "value": 1,
+      },
+    ],
+    mode: [""],
+  )
+  data += vim_emu(
+    source_keys_list: key1,
+    dest_keys_list: [
+      {
+        "set_variable": {
+          "name": key1 + " pressed",
+          "value": 1,
+        },
+      },
+      {
+        "key_code": key1,
+      },
+    ],
+    "to_delayed_action": {
+      "to_if_invoked": [
+        {
+          "set_variable": {
+            "name": key1 + " pressed",
+            "value": 0,
+          }
+        }
+      ],
+      "to_if_canceled": [
+        {
+          "set_variable": {
+            "name": key1 + " pressed",
+            "value": 0,
+          }
+        }
+      ]
+    },
+  )
   make_data(data, as_json)
 end
 
