@@ -42,3 +42,4 @@ Then open `Karabiner-Elements Preferences > Complex Modifications > Rules > Add 
 1. Put a json file to your site.
 2. Make a link `karabiner://karabiner/assets/complex_modifications/import?url=<JSON_URL>`.
 3. Open the link from web browser.
+
