@@ -1,0 +1,38 @@
+{
+  "title": "fn_lock",
+  "rule_list": false,
+  "make_extra_description": true,
+  "rules": [
+    {
+      "description": "Fn Lock",
+      "manipulators":
+      <%=
+        manipulators = []
+        manipulators += each_key(
+          source_keys_list: "fn",
+          dest_keys_list: [],
+          to_post_events: [
+            {"set_variable": {"name": "fn_lock", "value": 1}}
+          ],
+          conditions: [{"type": "variable_if", "name": "fn_lock", "value": 0}]
+        )
+        manipulators += each_key(
+          source_keys_list: "fn",
+          dest_keys_list: [],
+          to_post_events: [
+            {"set_variable": {"name": "fn_lock", "value": 0}}
+          ],
+          conditions: [{"type": "variable_if", "name": "fn_lock", "value": 1}]
+        )
+        keys = [*('0'..'9'), *('a'..'z')]
+        manipulators += each_key(
+          source_keys_list: keys,
+          dest_keys_list: keys,
+          to_modifiers: ["fn"],
+          conditions: [{"type": "variable_if", "name": "fn_lock", "value": 1}]
+        )
+        JSON.generate(manipulators)
+      %>
+    }
+  ]
+}
