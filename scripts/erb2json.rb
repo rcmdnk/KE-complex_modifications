@@ -121,7 +121,7 @@ def each_key(source_keys_list: :source_keys_list, dest_keys_list: :dest_keys_lis
       events << e
     end
     d['to'] = hash_to(events)
-    d['to_if_alone'] = to_if_alone[index] if (to_if_alone[index] and to_if_alone[index].size != 0)
+    d['to_if_alone'] = hash_to(to_if_alone[index]) if (to_if_alone[index] and to_if_alone[index].size != 0)
     d['to_after_key_up'] = to_after_key_up unless to_after_key_up.size == 0
     d['to_delayed_action'] = to_delayed_action unless to_delayed_action.size == 0
 
