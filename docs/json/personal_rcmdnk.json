@@ -1221,6 +1221,35 @@
       ]
     },
     {
+      "description": "Disable Ctrl-W at Remote Deskotp Tool",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "w",
+            "modifiers": {
+              "mandatory": [
+                "control"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "vk_none"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.microsoft\\.rdc.macos$"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "description": "Cmd-(Shift-)Tab to Cmd-Opt-Right(Left) (Select Next(Previous) Tab), 次(前)のタブを表示)",
       "manipulators": [
         {
