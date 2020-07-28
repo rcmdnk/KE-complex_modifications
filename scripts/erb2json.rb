@@ -24,11 +24,11 @@ end
 
 def key(data, key)
   if key == "any"
-    data['any'] = "key_code"
+    data[:any] = "key_code"
   elsif key.start_with? "button"
     data['pointing_button'] = key
   else
-    data['key_code'] = key
+    data[:key_code] = key
   end
 end
 
@@ -39,14 +39,14 @@ def from(key_code, mandatory_modifiers=[], optional_modifiers=[], as_json=true)
   data = {}
   key(data, key_code)
   mandatory_modifiers.each do |m|
-    data['modifiers'] = {} if data['modifiers'].nil?
-    data['modifiers']['mandatory'] = [] if data['modifiers']['mandatory'].nil?
-    data['modifiers']['mandatory'] << m
+    data[:modifiers] = {} if data[:modifiers].nil?
+    data[:modifiers]['mandatory'] = [] if data[:modifiers][:mandatory].nil?
+    data[:modifiers]['mandatory'] << m
   end
   optional_modifiers.each do |m|
-    data['modifiers'] = {} if data['modifiers'].nil?
-    data['modifiers']['optional'] = [] if data['modifiers']['optional'].nil?
-    data['modifiers']['optional'] << m
+    data[:modifiers] = {} if data[:modifiers].nil?
+    data[:modifiers]['optional'] = [] if data[:modifiers][:optional].nil?
+    data[:modifiers]['optional'] << m
   end
   make_data(data, as_json)
 end
@@ -62,7 +62,7 @@ def to(events, as_json=true, repeat=1)
     if e.is_a? Array
       key(d, e[0])
       unless e[1].nil?
-        d['modifiers'] = e[1]
+        d[:modifiers] = e[1]
       end
     elsif e.is_a? String
       key(d, e)
@@ -92,11 +92,11 @@ def each_key(source_keys_list: :source_keys_list, dest_keys_list: :dest_keys_lis
   source_keys_list.each_with_index do |from_key, index|
     to_key = dest_keys_list[index]
     d = {}
-    d['type'] = 'basic'
+    d[:type] = 'basic'
     if from_key.is_a? String
-      d['from'] = from(from_key, from_mandatory_modifiers, from_optional_modifiers, false)
+      d[:from] = from(from_key, from_mandatory_modifiers, from_optional_modifiers, false)
     else
-      d['from'] = from_key
+      d[:from] = from_key
     end
 
     # Compile list of events to add to "to" section
@@ -120,15 +120,15 @@ def each_key(source_keys_list: :source_keys_list, dest_keys_list: :dest_keys_lis
     to_post_events.each do |e|
       events << e
     end
-    d['to'] = hash_to(events)
-    d['to_if_alone'] = hash_to(to_if_alone[index]) if (to_if_alone[index] and to_if_alone[index].size != 0)
-    d['to_after_key_up'] = to_after_key_up unless to_after_key_up.size == 0
-    d['to_delayed_action'] = to_delayed_action unless to_delayed_action.size == 0
+    d[:to] = hash_to(events)
+    d[:to_if_alone] = hash_to(to_if_alone[index]) if (to_if_alone[index] and to_if_alone[index].size != 0)
+    d[:to_after_key_up] = to_after_key_up unless to_after_key_up.size == 0
+    d[:to_delayed_action] = to_delayed_action unless to_delayed_action.size == 0
 
     if conditions.any?
-      d['conditions'] = []
+      d[:conditions] = []
       conditions.each do |c|
-        d['conditions'] << c
+        d[:conditions] << c
       end
     end
     data << d
@@ -304,8 +304,8 @@ def frontmost_application(type, app_aliases, as_json=true)
 
   unless bundle_identifiers.empty?
     data = {
-      "type" => type,
-      "bundle_identifiers" => bundle_identifiers
+      type:  type,
+      bundle_identifiers: bundle_identifiers
     }
     make_data(data, as_json)
   end
@@ -320,7 +320,7 @@ def frontmost_application_unless(app_aliases, as_json=true)
 end
 
 def device(type, device_aliases, as_json=true)
-  hhkb_id = {"vendor_id": 2131}
+  hhkb_id = {vendor_id: 2131}
 
   # ----------------------------------------
 
@@ -338,8 +338,8 @@ def device(type, device_aliases, as_json=true)
 
   unless ids.empty?
     data = {
-      "type" => type,
-      "identifiers" => ids
+      type:  type,
+      identifiers: ids
     }
     make_data(data, as_json)
   end
@@ -360,18 +360,18 @@ def input_source(type, input_source_aliases, as_json=true)
       input_sources << input_source_alias
     end
     if input_source_alias.include?("keylayout")
-      input_sources << { "input_source_id": input_source_alias}
+      input_sources << { input_source_id: input_source_alias}
     elsif input_source_alias.include?("inputmethod")
-      input_sources << { "input_mode_id": input_source_alias}
+      input_sources << { input_mode_id: input_source_alias}
     else
-      input_sources << { "language": input_source_alias}
+      input_sources << { language: input_source_alias}
     end
   end
 
   unless input_sources.empty?
     data = {
-      "type" => type,
-      "input_sources" => input_sources
+      type: type,
+      input_sources: input_sources
     }
     make_data(data, as_json)
   end
@@ -407,7 +407,7 @@ def vim_emu(source_keys_list: :source_keys_list, dest_keys_list: :dest_keys_list
   mode.each do |m|
     conditions_vim_emu = deepcopy(conditions_vim_emu_common)
     if m != "" and m != "insert"
-      conditions_vim_emu += [{"type": "variable_if", "name": "vim_emu_#{m}", "value": 1}]
+      conditions_vim_emu += [{type: "variable_if", name: "vim_emu_#{m}", value: 1}]
     end
 
     dest_keys_list_vim_emu = []
@@ -425,9 +425,9 @@ def vim_emu(source_keys_list: :source_keys_list, dest_keys_list: :dest_keys_list
         end
         events = hash_to(deepcopy(events))
         events.each do |e|
-          if e.key? "key_code"
-            e["modifiers"] = [] unless e.key? "modifiers"
-            e["modifiers"] << "shift"
+          if e.key? :key_code
+            e[:modifiers] = [] unless e.key? :modifiers
+            e[:modifiers] << "shift"
           end
         end
         dest_keys_list_vim_emu << events
@@ -456,7 +456,7 @@ def vim_emu(source_keys_list: :source_keys_list, dest_keys_list: :dest_keys_list
         dest_keys_list_repeat.push(keys_list)
       end
       conditions_repeat = deepcopy(conditions_vim_emu)
-      conditions_repeat += [{"type": "variable_if", "name": "vim_emu_n", "value": r}] if r > 1
+      conditions_repeat += [{type: "variable_if", name: "vim_emu_n", value: r}] if r > 1
 
       data += each_key(
         source_keys_list: source_keys_list,
@@ -524,7 +524,7 @@ def vim_emu_mode(normal: 0, visual: 0, visual_line: 0, command: 0, command_w: 0,
 
   data = []
   (modes + ["n"]).each do |m|
-    data.push({"set_variable": {"name": "vim_emu_#{m}", "value": eval(m)}})
+    data.push({"set_variable": {name: "vim_emu_#{m}", value: eval(m)}})
   end
   make_data(data, as_json)
 end
@@ -544,7 +544,7 @@ def vim_emu_esc(source_keys_list, as_json=false)
   data += vim_emu(
     source_keys_list: source_keys_list,
     dest_keys_list: dest_keys_list,
-    to_post_events: hash_to([["escape"]]) + vim_emu_mode(normal: 1),
+    to_post_events: hash_to([["tab"], ["tab"], ["spacebar"]]) + vim_emu_mode(normal: 1),
     mode: ["search", "search_input"]
   )
   data += vim_emu(
@@ -558,17 +558,17 @@ end
 def vim_emu_simul(key1, key2, as_json=false)
   data = []
   data += vim_emu(
-    source_keys_list: {"simultaneous": [{ "key_code": key1}, { "key_code": key2}]},
+    source_keys_list: {simultaneous: [{ key_code: key1}, { key_code: key2}]},
     dest_keys_list: vim_emu_mode(),
     mode: ["normal"],
   )
   data += vim_emu(
-    source_keys_list: {"simultaneous": [{ "key_code": key1}, { "key_code": key2}]},
+    source_keys_list: {simultaneous: [{ key_code: key1}, { key_code: key2}]},
     dest_keys_list: [["left_arrow"]] + vim_emu_mode(normal: 1),
     mode: ["visual", "visual_line"],
   )
   data += vim_emu(
-    source_keys_list: {"simultaneous": [{ "key_code": key1}, { "key_code": key2}]},
+    source_keys_list: {simultaneous: [{ key_code: key1}, { key_code: key2}]},
     dest_keys_list: vim_emu_mode(normal: 1),
     mode: "",
   )
@@ -583,9 +583,9 @@ def vim_emu_double(key1, as_json=false)
     dest_keys_list: vim_emu_mode(),
     "conditions": [
       {
-        "type": "variable_if",
-        "name": key1 + " pressed",
-        "value": 1,
+        type: "variable_if",
+        name: "vim_emu_" + key1 + "_pressed",
+        value: 1,
       },
     ],
     mode: ["normal"],
@@ -593,11 +593,11 @@ def vim_emu_double(key1, as_json=false)
   data += vim_emu(
     source_keys_list: key1,
     dest_keys_list: [["left_arrow"]] + vim_emu_mode(normal: 1),
-    "conditions": [
+    conditions: [
       {
-        "type": "variable_if",
-        "name": key1 + " pressed",
-        "value": 1,
+        type: "variable_if",
+        name: "vim_emu_" + key1 + "_pressed",
+        value: 1,
       },
     ],
     mode: ["visual", "visual_line"],
@@ -607,9 +607,9 @@ def vim_emu_double(key1, as_json=false)
     dest_keys_list: vim_emu_mode(normal: 1),
     "conditions": [
       {
-        "type": "variable_if",
-        "name": key1 + " pressed",
-        "value": 1,
+        type: "variable_if",
+        name: "vim_emu_" + key1 + "_pressed",
+        value: 1,
       },
     ],
     mode: [""],
@@ -618,29 +618,29 @@ def vim_emu_double(key1, as_json=false)
     source_keys_list: key1,
     dest_keys_list: [
       {
-        "set_variable": {
-          "name": key1 + " pressed",
-          "value": 1,
+        set_variable: {
+          name: "vim_emu_" + key1 + "_pressed",
+          value: 1,
         },
       },
       {
-        "key_code": key1,
+        key_code: key1,
       },
     ],
-    "to_delayed_action": {
-      "to_if_invoked": [
+    to_delayed_action: {
+      to_if_invoked: [
         {
-          "set_variable": {
-            "name": key1 + " pressed",
-            "value": 0,
+          set_variable: {
+            name: "vim_emu_" + key1 + "_pressed",
+            value: 0,
           }
         }
       ],
-      "to_if_canceled": [
+      to_if_canceled: [
         {
-          "set_variable": {
-            "name": key1 + " pressed",
-            "value": 0,
+          set_variable: {
+            name: "vim_emu_" + key1 + "_pressed",
+            value: 0,
           }
         }
       ]

@@ -1278,7 +1278,6 @@
             "key_code": "tab",
             "modifiers": {
               "mandatory": [
-                "command",
                 "shift"
               ]
             }
@@ -1323,7 +1322,6 @@
             "key_code": "tab",
             "modifiers": {
               "mandatory": [
-                "option",
                 "shift"
               ]
             }
@@ -1537,8 +1535,6 @@
             "key_code": "s",
             "modifiers": {
               "mandatory": [
-                "control",
-                "command",
                 "shift"
               ]
             }
@@ -1592,8 +1588,6 @@
             "key_code": "h",
             "modifiers": {
               "mandatory": [
-                "control",
-                "command",
                 "shift"
               ]
             }
@@ -1797,7 +1791,6 @@
             "key_code": "h",
             "modifiers": {
               "mandatory": [
-                "control",
                 "command"
               ]
             }
@@ -1814,7 +1807,6 @@
             "key_code": "j",
             "modifiers": {
               "mandatory": [
-                "control",
                 "command"
               ]
             }
@@ -1831,7 +1823,6 @@
             "key_code": "k",
             "modifiers": {
               "mandatory": [
-                "control",
                 "command"
               ]
             }
@@ -1848,7 +1839,6 @@
             "key_code": "l",
             "modifiers": {
               "mandatory": [
-                "control",
                 "command"
               ]
             }
@@ -1906,7 +1896,6 @@
             "key_code": "a",
             "modifiers": {
               "mandatory": [
-                "control",
                 "command"
               ]
             }
@@ -1955,7 +1944,6 @@
             "key_code": "slash",
             "modifiers": {
               "mandatory": [
-                "command",
                 "shift"
               ]
             }
@@ -1972,7 +1960,6 @@
             "key_code": "y",
             "modifiers": {
               "mandatory": [
-                "control",
                 "shift"
               ]
             }
@@ -1989,7 +1976,6 @@
             "key_code": "u",
             "modifiers": {
               "mandatory": [
-                "control",
                 "shift"
               ]
             }
@@ -2006,7 +1992,6 @@
             "key_code": "i",
             "modifiers": {
               "mandatory": [
-                "control",
                 "shift"
               ]
             }
@@ -2023,7 +2008,6 @@
             "key_code": "o",
             "modifiers": {
               "mandatory": [
-                "control",
                 "shift"
               ]
             }
@@ -2040,8 +2024,6 @@
             "key_code": "y",
             "modifiers": {
               "mandatory": [
-                "command",
-                "control",
                 "shift"
               ]
             }
@@ -2058,8 +2040,6 @@
             "key_code": "u",
             "modifiers": {
               "mandatory": [
-                "command",
-                "control",
                 "shift"
               ]
             }
@@ -2076,8 +2056,6 @@
             "key_code": "i",
             "modifiers": {
               "mandatory": [
-                "command",
-                "control",
                 "shift"
               ]
             }
@@ -2094,8 +2072,6 @@
             "key_code": "o",
             "modifiers": {
               "mandatory": [
-                "command",
-                "control",
                 "shift"
               ]
             }
@@ -2112,7 +2088,6 @@
             "key_code": "return_or_enter",
             "modifiers": {
               "mandatory": [
-                "command",
                 "control"
               ]
             }
@@ -2129,7 +2104,6 @@
             "key_code": "return_or_enter",
             "modifiers": {
               "mandatory": [
-                "command",
                 "shift"
               ]
             }
@@ -2146,8 +2120,6 @@
             "key_code": "return_or_enter",
             "modifiers": {
               "mandatory": [
-                "command",
-                "control",
                 "shift"
               ]
             }
@@ -2164,7 +2136,6 @@
             "key_code": "h",
             "modifiers": {
               "mandatory": [
-                "command",
                 "shift"
               ]
             }
@@ -2181,7 +2152,6 @@
             "key_code": "j",
             "modifiers": {
               "mandatory": [
-                "command",
                 "shift"
               ]
             }
@@ -2198,7 +2168,6 @@
             "key_code": "k",
             "modifiers": {
               "mandatory": [
-                "command",
                 "shift"
               ]
             }
@@ -2215,7 +2184,6 @@
             "key_code": "l",
             "modifiers": {
               "mandatory": [
-                "command",
                 "shift"
               ]
             }
@@ -2232,7 +2200,6 @@
             "key_code": "y",
             "modifiers": {
               "mandatory": [
-                "command",
                 "shift"
               ]
             }
@@ -2249,7 +2216,6 @@
             "key_code": "u",
             "modifiers": {
               "mandatory": [
-                "command",
                 "shift"
               ]
             }
@@ -2266,7 +2232,6 @@
             "key_code": "i",
             "modifiers": {
               "mandatory": [
-                "command",
                 "shift"
               ]
             }
@@ -2283,7 +2248,6 @@
             "key_code": "o",
             "modifiers": {
               "mandatory": [
-                "command",
                 "shift"
               ]
             }
@@ -2308,7 +2272,6 @@
             "key_code": "h",
             "modifiers": {
               "mandatory": [
-                "control",
                 "shift"
               ]
             }
@@ -2327,7 +2290,6 @@
             "key_code": "j",
             "modifiers": {
               "mandatory": [
-                "control",
                 "shift"
               ]
             }
@@ -2346,7 +2308,6 @@
             "key_code": "k",
             "modifiers": {
               "mandatory": [
-                "control",
                 "shift"
               ]
             }
@@ -2365,7 +2326,6 @@
             "key_code": "l",
             "modifiers": {
               "mandatory": [
-                "control",
                 "shift"
               ]
             }
@@ -2384,7 +2344,6 @@
             "key_code": "n",
             "modifiers": {
               "mandatory": [
-                "control",
                 "shift"
               ]
             }
@@ -2401,7 +2360,6 @@
             "key_code": "m",
             "modifiers": {
               "mandatory": [
-                "control",
                 "shift"
               ]
             }
@@ -2418,7 +2376,6 @@
             "key_code": "p",
             "modifiers": {
               "mandatory": [
-                "control",
                 "shift"
               ]
             }
@@ -2673,8 +2630,6 @@
             "key_code": "h",
             "modifiers": {
               "mandatory": [
-                "command",
-                "control",
                 "shift"
               ]
             }
@@ -2694,8 +2649,6 @@
             "key_code": "l",
             "modifiers": {
               "mandatory": [
-                "command",
-                "control",
                 "shift"
               ]
             }
@@ -2715,7 +2668,6 @@
             "key_code": "f",
             "modifiers": {
               "mandatory": [
-                "command",
                 "control"
               ]
             }
