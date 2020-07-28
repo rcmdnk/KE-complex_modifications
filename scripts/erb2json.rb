@@ -544,7 +544,7 @@ def vim_emu_esc(source_keys_list, as_json=false)
   data += vim_emu(
     source_keys_list: source_keys_list,
     dest_keys_list: dest_keys_list,
-    to_post_events: hash_to([["tab"], ["tab"], ["spacebar"]]) + vim_emu_mode(normal: 1),
+    to_post_events: hash_to([["escape"]]) + vim_emu_mode(normal: 1),
     mode: ["search", "search_input"]
   )
   data += vim_emu(
