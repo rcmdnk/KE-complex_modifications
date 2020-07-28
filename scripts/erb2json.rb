@@ -490,7 +490,7 @@ def vim_emu_modes(list="change")
 
   main_modes = normal_modes + visual_modes + command_modes
   sub_modes = ydc_modes + other_modes
-  all_modes = main_modes + replace_modes + sub_modes + insert_modes
+  all_modes = main_modes + replace_modes + sub_modes + search_modes + insert_modes
 
   if list == "change"
     all_modes + ["n"]
