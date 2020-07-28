@@ -393,6 +393,43 @@
         )
         JSON.generate(manipulators)
       %>
+    },
+    {
+      "description": "Vim emulation: Enable the display notification when the mode is changed: toggle by Ctrl-Cmd-Shift-v",
+      "extra_description_level": 1,
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": <%= from("v", ["control", "command", "shift"]) %>,
+          "to": [
+            {
+              "set_variable": {
+                "name": "vim_emu_notice",
+                "value": 0
+              }
+            }
+          ],
+          "conditions": [
+            <%= frontmost_application_unless("vim_emu_exception") %>,
+            {"type": "variable_if", "name": "vim_emu_notice", "value": 1}
+          ]
+        },
+        {
+          "type": "basic",
+          "from": <%= from("v", ["control", "command", "shift"]) %>,
+          "to": [
+            {
+              "set_variable": {
+                "name": "vim_emu_notice",
+                "value": 1
+              }
+            }
+          ],
+          "conditions": [
+            <%= frontmost_application_unless("vim_emu_exception") %>
+          ]
+        }
+      ]
     }
   ]
 }

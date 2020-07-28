@@ -384,6 +384,28 @@ def input_source_unless(input_source_aliases, as_json=true)
   input_source('input_source_unless', input_source_aliases, as_json)
 end
 
+def check_set_variable(array)
+  mode = ""
+  array.each do |k|
+    if k.is_a?(Hash) and k.key?(:set_variable)
+      if k[:set_variable][:name] == "vim_emu_normal" and k[:set_variable][:value] == 1
+        mode = "Normal"
+        break
+      elsif (k[:set_variable][:name] == "vim_emu_visual" and k[:set_variable][:value] == 1) or (k[:set_variable][:name] == "vim_emu_visual_line" and k[:set_variable][:value] == 1)
+        mode = "Visual"
+        break
+      elsif k[:set_variable][:name] == "vim_emu_command" and k[:set_variable][:value] == 1
+        mode = "Command"
+        break
+      elsif k[:set_variable][:name] == "vim_emu_insert" and k[:set_variable][:value] == 1
+        mode = "Insert"
+        break
+      end
+    end
+  end
+  mode
+end
+
 def vim_emu(source_keys_list: :source_keys_list, dest_keys_list: :dest_keys_list, from_mandatory_modifiers: [], from_optional_modifiers: [], to_pre_events: [], to_modifiers: [], to_post_events: [], to_if_alone: [], to_after_key_up: [], to_delayed_action: [], conditions: "", as_json: false, mode: "", move: 0)
   unless source_keys_list.is_a? Array
     source_keys_list = [source_keys_list]
@@ -456,6 +478,44 @@ def vim_emu(source_keys_list: :source_keys_list, dest_keys_list: :dest_keys_list
       conditions_repeat = deepcopy(conditions_vim_emu)
       conditions_repeat += [{type: "variable_if", name: "vim_emu_n", value: r}] if r > 1
 
+      notice = false
+      dest_keys_list_repeat_notice = []
+      to_post_events_notice = to_post_events
+
+      dest_keys_list_repeat.each do |l|
+        mode = check_set_variable(l)
+        if mode != ""
+          notice = true
+          dest_keys_list_repeat_notice.push(l + [{shell_command: "osascript -e 'display notification \"#{mode} Mode\" with title \"vim_emu\"'"}])
+        else
+          dest_keys_list_repeat_notice.push(l)
+        end
+      end
+      if not notice
+        mode = check_set_variable(to_post_events)
+        if mode != ""
+          notice = true
+          dest_keys_list_repeat_notice = dest_keys_list_repeat
+          to_post_events_notice = to_post_events + [{shell_command: "osascript -e 'display notification \"#{mode} Mode\" with title \"vim_emu\"'"}]
+        end
+      end
+
+      if notice
+        data += each_key(
+          source_keys_list: source_keys_list,
+          dest_keys_list: dest_keys_list_repeat_notice,
+          from_mandatory_modifiers: from_mandatory_modifiers,
+          from_optional_modifiers: from_optional_modifiers,
+          to_pre_events: to_pre_events,
+          to_modifiers: to_modifiers,
+          to_post_events: to_post_events_notice,
+          to_if_alone: to_if_alone,
+          to_after_key_up: to_after_key_up,
+          to_delayed_action: to_delayed_action,
+          conditions: conditions_repeat + [{type: "variable_if", name: "vim_emu_notice", value: 1}],
+          as_json: false
+        )
+      end
       data += each_key(
         source_keys_list: source_keys_list,
         dest_keys_list: dest_keys_list_repeat,
