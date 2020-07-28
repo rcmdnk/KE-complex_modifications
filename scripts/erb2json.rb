@@ -26,7 +26,7 @@ def key(data, key)
   if key == "any"
     data[:any] = "key_code"
   elsif key.start_with? "button"
-    data['pointing_button'] = key
+    data[:pointing_button] = key
   else
     data[:key_code] = key
   end
@@ -40,13 +40,13 @@ def from(key_code, mandatory_modifiers=[], optional_modifiers=[], as_json=true)
   key(data, key_code)
   mandatory_modifiers.each do |m|
     data[:modifiers] = {} if data[:modifiers].nil?
-    data[:modifiers]['mandatory'] = [] if data[:modifiers][:mandatory].nil?
-    data[:modifiers]['mandatory'] << m
+    data[:modifiers][:mandatory] = [] if data[:modifiers][:mandatory].nil?
+    data[:modifiers][:mandatory] << m
   end
   optional_modifiers.each do |m|
     data[:modifiers] = {} if data[:modifiers].nil?
-    data[:modifiers]['optional'] = [] if data[:modifiers][:optional].nil?
-    data[:modifiers]['optional'] << m
+    data[:modifiers][:optional] = [] if data[:modifiers][:optional].nil?
+    data[:modifiers][:optional] << m
   end
   make_data(data, as_json)
 end
