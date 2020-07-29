@@ -1,7 +1,7 @@
 vim_emu
 =======
 
-Vim Emulation with [Karabiner-Elements](https://github.com/tekezo/Karabiner-Elements) on macOS.
+Vim Emulation using [Karabiner-Elements](https://github.com/tekezo/Karabiner-Elements) on macOS.
 
 For previous [Karabiner](https://pqrs.org/osx/karabiner/), use [vim_emu for Karabiner](https://github.com/rcmdnk/vim_emu/).
 
@@ -24,6 +24,9 @@ Enable some of these switching options as you like,
 and enable **Vim emulation core part**.
 
 Switching options must be placed higher than **Vim emulation core part** in **Enable rules** list.
+
+If you want a menu bar icon to notice the mode,
+try [VEM](https://github.com/rcmdnk/VEM).
 
 ## Keyboards
 Currently, vim_emu supports US.
