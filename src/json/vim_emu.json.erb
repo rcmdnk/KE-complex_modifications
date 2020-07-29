@@ -211,7 +211,7 @@
         ["y", "d", "c"].each do |m|
           manipulators += vim_emu(
             source_keys_list: [m],
-            dest_keys_list: [vim_emu_mode({m.to_sym=>1})],
+            dest_keys_list: [vim_emu_mode(m.to_sym=>1)],
             mode: "normal",
           )
           manipulators += vim_emu(
