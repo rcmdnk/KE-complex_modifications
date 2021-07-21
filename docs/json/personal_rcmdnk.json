@@ -2548,7 +2548,7 @@
       ]
     },
     {
-      "description": "Others (Dock, Sleep, Delete, IME, Misison Control, Spotlight)",
+      "description": "Others (Dock, Lock, Delete, IME, Misison Control, Spotlight)",
       "manipulators": [
         {
           "type": "basic",
@@ -2581,10 +2581,10 @@
           },
           "to": [
             {
-              "key_code": "eject",
+              "key_code": "q",
               "modifiers": [
                 "control",
-                "shift"
+                "command"
               ]
             }
           ]

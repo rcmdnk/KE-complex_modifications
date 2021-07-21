@@ -383,7 +383,7 @@
       ]
     },
     {
-      "description": "Others (Dock, Sleep, Delete, IME, Misison Control, Spotlight)",
+      "description": "Others (Dock, Lock, Delete, IME, Misison Control, Spotlight)",
       "manipulators": [
         <%# Focus on Dock %>
         {
@@ -391,11 +391,11 @@
           "from": <%= from("m", ["control"]) %>,
           "to": <%= to([["f3", ["control"]]]) %>
         },
-        <%# Sleep %>
+        <%# Lock %>
         {
           "type": "basic",
           "from": <%= from("l", ["option"]) %>,
-          "to": <%= to([["eject", ["control", "shift"]]]) %>
+          "to": <%= to([["q", ["control", "command"]]]) %>
         },
         <%# Delete %>
         {
