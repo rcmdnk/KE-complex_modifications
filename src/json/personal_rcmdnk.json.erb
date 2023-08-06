@@ -389,7 +389,8 @@
         {
           "type": "basic",
           "from": <%= from("m", ["control"]) %>,
-          "to": <%= to([["f3", ["control"]]]) %>
+          "to": <%= to([["f3", ["control"]]]) %>,
+          "conditions": [ <%= frontmost_application_unless("emacs_key_bindings_exception") %> ]
         },
         <%# Lock %>
         {
