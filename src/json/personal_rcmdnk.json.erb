@@ -360,14 +360,14 @@
     {
       "description": "Control-j to Return",
       "extra_descriptions": [
-        "Other than browsers."
+        "Other than vim, emacs, browsers."
       ],
       "manipulators": [
         {
           "type": "basic",
           "from": <%= from("j", ["control"]) %>,
           "to": <%= to([["return_or_enter"]]) %>,
-          "conditions": [ <%= frontmost_application_unless("browser") %> ]
+          "conditions": [ <%= frontmost_application_unless("vim_emu_exception") %> ]
         }
       ]
     },
