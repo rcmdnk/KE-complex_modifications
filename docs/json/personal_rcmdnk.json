@@ -1856,55 +1856,6 @@
               ]
             }
           ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "c",
-            "modifiers": {
-              "mandatory": [
-                "shift",
-                "command"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "q",
-              "modifiers": [
-                "command",
-                "shift"
-              ]
-            },
-            {
-              "key_code": "tab",
-              "modifiers": [
-                "control"
-              ]
-            },
-            {
-              "key_code": "c",
-              "modifiers": [
-                "command",
-                "shift"
-              ]
-            },
-            {
-              "key_code": "q",
-              "modifiers": [
-                "command",
-                "shift"
-              ]
-            }
-          ],
-          "conditions": [
-            {
-              "type": "frontmost_application_if",
-              "bundle_identifiers": [
-                "^com\\.google\\.Chrome$"
-              ]
-            }
-          ]
         }
       ]
     },

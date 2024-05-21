@@ -275,12 +275,6 @@
           "from": <%= from("e", ["control", "command"]) %>,
           "to": <%= to([["f", ["command", "shift"]]]) %>,
           "conditions": [ <%= frontmost_application_if("obsidian") %> ]
-        },
-        {
-          "type": "basic",
-          "from": <%= from("c", ["shift", "command"]) %>,
-          "to": <%= to([["q", ["command", "shift"]], ["tab", ["control"]], ["c", ["command", "shift"]], ["q", ["command", "shift"]]]) %>,
-          "conditions": [ <%= frontmost_application_if("chrome") %> ]
         }
       ]
     },
