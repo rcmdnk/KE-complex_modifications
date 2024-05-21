@@ -258,6 +258,23 @@
       ]
     },
     {
+      "description": "For Obsidian",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": <%= from("e", ["control", "command"]) %>,
+          "to": <%= to([["q", ["command", "shift"]], ["f", ["command", "shift"]]]) %>,
+          "conditions": [ <%= frontmost_application_if("obsidian") %> ]
+        },
+        {
+          "type": "basic",
+          "from": <%= from("e", ["control", "command"]) %>,
+          "to": <%= to([["f", ["command", "shift"]]]) %>,
+          "conditions": [ <%= frontmost_application_unless("obsidian") %> ]
+        }
+      ]
+    },
+    {
       "description": "Change cmd-ctrl-h/j/k/l to arrow keys",
       "extra_descriptions": [
         "Vim like move."

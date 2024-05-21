@@ -1786,6 +1786,76 @@
       ]
     },
     {
+      "description": "For Obsidian",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "e",
+            "modifiers": {
+              "mandatory": [
+                "control",
+                "command"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "q",
+              "modifiers": [
+                "command",
+                "shift"
+              ]
+            },
+            {
+              "key_code": "f",
+              "modifiers": [
+                "command",
+                "shift"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^md\\.obsidian$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "e",
+            "modifiers": {
+              "mandatory": [
+                "control",
+                "command"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "f",
+              "modifiers": [
+                "command",
+                "shift"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^md\\.obsidian$"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "description": "Change cmd-ctrl-h/j/k/l to arrow keys",
       "extra_descriptions": [
         "Vim like move."

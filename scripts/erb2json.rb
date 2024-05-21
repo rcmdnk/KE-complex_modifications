@@ -223,6 +223,10 @@ def frontmost_application(type, app_aliases, as_json=true)
     '^com\.microsoft\.rdc.macos$',
   ]
 
+  obsidian_bundle_identifiers = [
+    '^md\.obsidian$',
+  ]
+
 
   # ----------------------------------------
 
@@ -295,6 +299,9 @@ def frontmost_application(type, app_aliases, as_json=true)
 
     when 'rdt'
       bundle_identifiers.concat(rdt_bundle_identifiers)
+
+    when 'obsidian'
+      bundle_identifiers.concat(obsidian_bundle_identifiers)
 
     else
       $stderr << "unknown app_alias: #{app_alias}\n"
