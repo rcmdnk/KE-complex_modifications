@@ -149,6 +149,10 @@ def frontmost_application(type, app_aliases, as_json=true)
     '^com\.apple\.Safari$',
   ]
 
+  chrome_bundle_identifiers = [
+    '^com\.google\.Chrome$'
+  ]
+
   browser_bundle_identifiers = [
     '^org\.mozilla\.firefox$',
     '^org\.waterfoxproject\.waterfox$',
@@ -270,6 +274,9 @@ def frontmost_application(type, app_aliases, as_json=true)
 
     when 'virtual_machine'
       bundle_identifiers.concat(virtual_machine_bundle_identifiers)
+
+    when 'chrome'
+      bundle_identifiers.concat(chrome_bundle_identifiers)
 
     when 'browser'
       bundle_identifiers.concat(browser_bundle_identifiers)

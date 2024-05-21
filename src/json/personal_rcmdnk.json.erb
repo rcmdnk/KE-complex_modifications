@@ -260,7 +260,8 @@
     {
       "description": "For Obsidian",
       "extra_descriptions": [
-        "Cmd-Ctrl-e to sarch for in obsidian. Bring up obsidan frontmost if not."
+        "Cmd-Ctrl-e to sarch for in obsidian. Bring up obsidan frontmost if not.",
+        "Cmd-Shift-c to clip the web page to obsidian at Chrome."
       ],
       "manipulators": [
         {
@@ -274,6 +275,13 @@
           "from": <%= from("e", ["control", "command"]) %>,
           "to": <%= to([["f", ["command", "shift"]]]) %>,
           "conditions": [ <%= frontmost_application_if("obsidian") %> ]
+        },
+        {
+          "type": "basic",
+          "from": <%= from("c", ["shift", "command"]) %>,
+          "to": <%= to([["q", ["command", "shift"]], ["tab", ["control"]], ["c", ["command", "shift"]], ["q", ["command", "shift"]]]) %>,
+          "from": <%= from("tab", ["command"]) %>,
+          "conditions": [ <%= frontmost_application_if("chrome") %> ]
         }
       ]
     },

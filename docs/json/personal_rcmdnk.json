@@ -1788,7 +1788,8 @@
     {
       "description": "For Obsidian",
       "extra_descriptions": [
-        "Cmd-Ctrl-e to sarch for in obsidian. Bring up obsidan frontmost if not."
+        "Cmd-Ctrl-e to sarch for in obsidian. Bring up obsidan frontmost if not.",
+        "Cmd-Shift-c to clip the web page to obsidian at Chrome."
       ],
       "manipulators": [
         {
@@ -1852,6 +1853,54 @@
               "type": "frontmost_application_if",
               "bundle_identifiers": [
                 "^md\\.obsidian$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "tab",
+            "modifiers": {
+              "mandatory": [
+                "command"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "q",
+              "modifiers": [
+                "command",
+                "shift"
+              ]
+            },
+            {
+              "key_code": "tab",
+              "modifiers": [
+                "control"
+              ]
+            },
+            {
+              "key_code": "c",
+              "modifiers": [
+                "command",
+                "shift"
+              ]
+            },
+            {
+              "key_code": "q",
+              "modifiers": [
+                "command",
+                "shift"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.google\\.Chrome$"
               ]
             }
           ]
