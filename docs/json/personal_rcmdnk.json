@@ -1787,6 +1787,9 @@
     },
     {
       "description": "For Obsidian",
+      "extra_descriptions": [
+        "Cmd-Ctrl-e to sarch for in obsidian. Bring up obsidan frontmost if not."
+      ],
       "manipulators": [
         {
           "type": "basic",
@@ -1817,7 +1820,7 @@
           ],
           "conditions": [
             {
-              "type": "frontmost_application_if",
+              "type": "frontmost_application_unless",
               "bundle_identifiers": [
                 "^md\\.obsidian$"
               ]
@@ -1846,7 +1849,7 @@
           ],
           "conditions": [
             {
-              "type": "frontmost_application_unless",
+              "type": "frontmost_application_if",
               "bundle_identifiers": [
                 "^md\\.obsidian$"
               ]

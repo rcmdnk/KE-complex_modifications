@@ -259,18 +259,21 @@
     },
     {
       "description": "For Obsidian",
+      "extra_descriptions": [
+        "Cmd-Ctrl-e to sarch for in obsidian. Bring up obsidan frontmost if not."
+      ],
       "manipulators": [
         {
           "type": "basic",
           "from": <%= from("e", ["control", "command"]) %>,
           "to": <%= to([["q", ["command", "shift"]], ["f", ["command", "shift"]]]) %>,
-          "conditions": [ <%= frontmost_application_if("obsidian") %> ]
+          "conditions": [ <%= frontmost_application_unless("obsidian") %> ]
         },
         {
           "type": "basic",
           "from": <%= from("e", ["control", "command"]) %>,
           "to": <%= to([["f", ["command", "shift"]]]) %>,
-          "conditions": [ <%= frontmost_application_unless("obsidian") %> ]
+          "conditions": [ <%= frontmost_application_if("obsidian") %> ]
         }
       ]
     },
