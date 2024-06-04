@@ -275,6 +275,11 @@
           "from": <%= from("e", ["control", "command"]) %>,
           "to": <%= to([["f", ["command", "shift"]]]) %>,
           "conditions": [ <%= frontmost_application_if("obsidian") %> ]
+        },
+        {
+          "type": "basic",
+          "from": <%= from("q", ["command", "shift"]) %>,
+          "to": <%= to([["q", ["control", "command"]]]) %>
         }
       ]
     },
@@ -412,12 +417,6 @@
           "from": <%= from("m", ["control"]) %>,
           "to": <%= to([["f3", ["control"]]]) %>,
           "conditions": [ <%= frontmost_application_unless("emacs_key_bindings_exception") %> ]
-        },
-        <%# Lock %>
-        {
-          "type": "basic",
-          "from": <%= from("l", ["option"]) %>,
-          "to": <%= to([["q", ["control", "command"]]]) %>
         },
         <%# Delete %>
         {
