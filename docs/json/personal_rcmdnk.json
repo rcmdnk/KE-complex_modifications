@@ -1863,8 +1863,8 @@
             "key_code": "q",
             "modifiers": {
               "mandatory": [
-                "command",
-                "shift"
+                "control",
+                "command"
               ]
             }
           },
@@ -1872,8 +1872,8 @@
             {
               "key_code": "q",
               "modifiers": [
-                "control",
-                "command"
+                "command",
+                "shift"
               ]
             }
           ]
@@ -2733,6 +2733,26 @@
                 "^com\\.apple\\.x11$",
                 "^org\\.macosforge\\.xquartz\\.X11$",
                 "^org\\.macports\\.X11$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "l",
+            "modifiers": {
+              "mandatory": [
+                "option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "q",
+              "modifiers": [
+                "control",
+                "command"
               ]
             }
           ]
