@@ -2324,6 +2324,78 @@
         {
           "type": "basic",
           "from": {
+            "key_code": "h",
+            "modifiers": {
+              "mandatory": [
+                "command",
+                "control",
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "osascript ~/Library/Scripts/wsLU.scpt"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "j",
+            "modifiers": {
+              "mandatory": [
+                "command",
+                "control",
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "osascript ~/Library/Scripts/wsLD.scpt"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "k",
+            "modifiers": {
+              "mandatory": [
+                "command",
+                "control",
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "osascript ~/Library/Scripts/wsRU.scpt"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "l",
+            "modifiers": {
+              "mandatory": [
+                "command",
+                "control",
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "osascript ~/Library/Scripts/wsRD.scpt"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
             "key_code": "y",
             "modifiers": {
               "mandatory": [
