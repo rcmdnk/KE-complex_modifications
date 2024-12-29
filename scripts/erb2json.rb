@@ -231,6 +231,10 @@ def frontmost_application(type, app_aliases, as_json=true)
     '^md\.obsidian$',
   ]
 
+  notion_bundle_identifiers = [
+    '^notion\.id$',
+  ]
+
 
   # ----------------------------------------
 
@@ -309,6 +313,9 @@ def frontmost_application(type, app_aliases, as_json=true)
 
     when 'obsidian'
       bundle_identifiers.concat(obsidian_bundle_identifiers)
+
+    when 'notion'
+      bundle_identifiers.concat(notion_bundle_identifiers)
 
     else
       $stderr << "unknown app_alias: #{app_alias}\n"

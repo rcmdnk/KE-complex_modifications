@@ -260,8 +260,7 @@
     {
       "description": "For Obsidian",
       "extra_descriptions": [
-        "Cmd-Ctrl-e to sarch for in obsidian. Bring up obsidan frontmost if not.",
-        "Cmd-Shift-c to clip the web page to obsidian at Chrome."
+        "Cmd-Ctrl-e to sarch for in obsidian. Bring up obsidan frontmost if not."
       ],
       "manipulators": [
         {
@@ -280,6 +279,26 @@
           "type": "basic",
           "from": <%= from("q", ["control", "command"]) %>,
           "to": <%= to([["q", ["command", "shift"]]]) %>
+        }
+      ]
+    },
+    {
+      "description": "For Notion",
+      "extra_descriptions": [
+        "Cmd-Ctrl-g to toggle Notion."
+      ],
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": <%= from("g", ["control", "command"]) %>,
+          "to": [{"software_function": {"open_application": {"file_path": "/Applications/Notion.app"}}}],
+          "conditions": [ <%= frontmost_application_unless("notion") %> ]
+        },
+        {
+          "type": "basic",
+          "from": <%= from("g", ["control", "command"]) %>,
+          "to": [{"software_function": {"open_application": {"frontmost_application_history_index": 1}}}],
+          "conditions": [ <%= frontmost_application_if("notion") %> ]
         }
       ]
     },
