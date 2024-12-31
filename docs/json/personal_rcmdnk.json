@@ -39,7 +39,7 @@
           "conditions": [
             {
               "type": "device_if",
-              "identifers": [
+              "identifiers": [
                 {
                   "vendor_id": 2131
                 }
@@ -47,7 +47,7 @@
             },
             {
               "type": "frontmost_application_if",
-              "bundle_identifers": [
+              "bundle_identifiers": [
                 "^org\\.gnu\\.Emacs$",
                 "^org\\.gnu\\.AquamacsEmacs$",
                 "^org\\.gnu\\.Aquamacs$",
@@ -115,7 +115,7 @@
           "conditions": [
             {
               "type": "frontmost_application_if",
-              "bundle_identifers": [
+              "bundle_identifiers": [
                 "^com\\.googlecode\\.iterm2$"
               ]
             }
@@ -142,7 +142,7 @@
           "conditions": [
             {
               "type": "frontmost_application_if",
-              "bundle_identifers": [
+              "bundle_identifiers": [
                 "^com\\.googlecode\\.iterm2$"
               ]
             }
@@ -169,7 +169,7 @@
           "conditions": [
             {
               "type": "frontmost_application_if",
-              "bundle_identifers": [
+              "bundle_identifiers": [
                 "^com\\.googlecode\\.iterm2$"
               ]
             }
@@ -196,7 +196,7 @@
           "conditions": [
             {
               "type": "frontmost_application_if",
-              "bundle_identifers": [
+              "bundle_identifiers": [
                 "^com\\.googlecode\\.iterm2$"
               ]
             }
@@ -223,7 +223,7 @@
           "conditions": [
             {
               "type": "frontmost_application_if",
-              "bundle_identifers": [
+              "bundle_identifiers": [
                 "^com\\.googlecode\\.iterm2$"
               ]
             }
@@ -250,7 +250,7 @@
           "conditions": [
             {
               "type": "frontmost_application_if",
-              "bundle_identifers": [
+              "bundle_identifiers": [
                 "^com\\.googlecode\\.iterm2$"
               ]
             }
@@ -277,7 +277,7 @@
           "conditions": [
             {
               "type": "frontmost_application_if",
-              "bundle_identifers": [
+              "bundle_identifiers": [
                 "^com\\.googlecode\\.iterm2$"
               ]
             }
@@ -304,7 +304,7 @@
           "conditions": [
             {
               "type": "frontmost_application_if",
-              "bundle_identifers": [
+              "bundle_identifiers": [
                 "^com\\.googlecode\\.iterm2$"
               ]
             }
@@ -331,7 +331,7 @@
           "conditions": [
             {
               "type": "frontmost_application_if",
-              "bundle_identifers": [
+              "bundle_identifiers": [
                 "^com\\.googlecode\\.iterm2$"
               ]
             }
@@ -358,7 +358,7 @@
           "conditions": [
             {
               "type": "frontmost_application_if",
-              "bundle_identifers": [
+              "bundle_identifiers": [
                 "^com\\.googlecode\\.iterm2$"
               ]
             }
@@ -385,7 +385,7 @@
           "conditions": [
             {
               "type": "frontmost_application_if",
-              "bundle_identifers": [
+              "bundle_identifiers": [
                 "^com\\.googlecode\\.iterm2$"
               ]
             }
@@ -412,7 +412,7 @@
           "conditions": [
             {
               "type": "frontmost_application_if",
-              "bundle_identifers": [
+              "bundle_identifiers": [
                 "^com\\.googlecode\\.iterm2$"
               ]
             }
@@ -439,7 +439,7 @@
           "conditions": [
             {
               "type": "frontmost_application_if",
-              "bundle_identifers": [
+              "bundle_identifiers": [
                 "^com\\.googlecode\\.iterm2$"
               ]
             }
@@ -466,7 +466,7 @@
           "conditions": [
             {
               "type": "frontmost_application_if",
-              "bundle_identifers": [
+              "bundle_identifiers": [
                 "^com\\.googlecode\\.iterm2$"
               ]
             }
@@ -493,7 +493,7 @@
           "conditions": [
             {
               "type": "frontmost_application_if",
-              "bundle_identifers": [
+              "bundle_identifiers": [
                 "^com\\.googlecode\\.iterm2$"
               ]
             }
@@ -520,7 +520,7 @@
           "conditions": [
             {
               "type": "frontmost_application_if",
-              "bundle_identifers": [
+              "bundle_identifiers": [
                 "^com\\.googlecode\\.iterm2$"
               ]
             }
@@ -547,7 +547,7 @@
           "conditions": [
             {
               "type": "frontmost_application_if",
-              "bundle_identifers": [
+              "bundle_identifiers": [
                 "^com\\.googlecode\\.iterm2$"
               ]
             }
@@ -574,7 +574,7 @@
           "conditions": [
             {
               "type": "frontmost_application_if",
-              "bundle_identifers": [
+              "bundle_identifiers": [
                 "^com\\.googlecode\\.iterm2$"
               ]
             }
@@ -601,7 +601,7 @@
           "conditions": [
             {
               "type": "frontmost_application_if",
-              "bundle_identifers": [
+              "bundle_identifiers": [
                 "^com\\.googlecode\\.iterm2$"
               ]
             }
@@ -628,7 +628,7 @@
           "conditions": [
             {
               "type": "frontmost_application_if",
-              "bundle_identifers": [
+              "bundle_identifiers": [
                 "^com\\.googlecode\\.iterm2$"
               ]
             }
@@ -655,7 +655,7 @@
           "conditions": [
             {
               "type": "frontmost_application_if",
-              "bundle_identifers": [
+              "bundle_identifiers": [
                 "^com\\.googlecode\\.iterm2$"
               ]
             }
@@ -682,7 +682,7 @@
           "conditions": [
             {
               "type": "frontmost_application_if",
-              "bundle_identifers": [
+              "bundle_identifiers": [
                 "^com\\.googlecode\\.iterm2$"
               ]
             }
@@ -723,7 +723,7 @@
             },
             {
               "type": "frontmost_application_if",
-              "bundle_identifers": [
+              "bundle_identifiers": [
                 "^org\\.gnu\\.Emacs$",
                 "^org\\.gnu\\.AquamacsEmacs$",
                 "^org\\.gnu\\.Aquamacs$",
@@ -804,7 +804,7 @@
             },
             {
               "type": "frontmost_application_if",
-              "bundle_identifers": [
+              "bundle_identifiers": [
                 "^org\\.gnu\\.Emacs$",
                 "^org\\.gnu\\.AquamacsEmacs$",
                 "^org\\.gnu\\.Aquamacs$",
@@ -878,7 +878,7 @@
           "conditions": [
             {
               "type": "frontmost_application_unless",
-              "bundle_identifers": [
+              "bundle_identifiers": [
                 "^org\\.gnu\\.Emacs$",
                 "^org\\.gnu\\.AquamacsEmacs$",
                 "^org\\.gnu\\.Aquamacs$",
@@ -940,7 +940,7 @@
           "conditions": [
             {
               "type": "frontmost_application_unless",
-              "bundle_identifers": [
+              "bundle_identifiers": [
                 "^org\\.gnu\\.Emacs$",
                 "^org\\.gnu\\.AquamacsEmacs$",
                 "^org\\.gnu\\.Aquamacs$",
@@ -1002,7 +1002,7 @@
           "conditions": [
             {
               "type": "frontmost_application_unless",
-              "bundle_identifers": [
+              "bundle_identifiers": [
                 "^org\\.gnu\\.Emacs$",
                 "^org\\.gnu\\.AquamacsEmacs$",
                 "^org\\.gnu\\.Aquamacs$",
@@ -1064,7 +1064,7 @@
           "conditions": [
             {
               "type": "frontmost_application_unless",
-              "bundle_identifers": [
+              "bundle_identifiers": [
                 "^org\\.gnu\\.Emacs$",
                 "^org\\.gnu\\.AquamacsEmacs$",
                 "^org\\.gnu\\.Aquamacs$",
@@ -1131,7 +1131,7 @@
           "conditions": [
             {
               "type": "frontmost_application_if",
-              "bundle_identifers": [
+              "bundle_identifiers": [
                 "^com\\.apple\\.finder$"
               ]
             }
@@ -1158,7 +1158,7 @@
           "conditions": [
             {
               "type": "frontmost_application_if",
-              "bundle_identifers": [
+              "bundle_identifiers": [
                 "^com\\.apple\\.finder$"
               ]
             }
@@ -1185,7 +1185,7 @@
           "conditions": [
             {
               "type": "frontmost_application_if",
-              "bundle_identifers": [
+              "bundle_identifiers": [
                 "^com\\.apple\\.finder$"
               ]
             }
@@ -1212,7 +1212,7 @@
           "conditions": [
             {
               "type": "frontmost_application_if",
-              "bundle_identifers": [
+              "bundle_identifiers": [
                 "^com\\.apple\\.finder$"
               ]
             }
@@ -1241,7 +1241,7 @@
           "conditions": [
             {
               "type": "frontmost_application_if",
-              "bundle_identifers": [
+              "bundle_identifiers": [
                 "^com\\.microsoft\\.rdc.macos$"
               ]
             }
@@ -1372,7 +1372,7 @@
           "conditions": [
             {
               "type": "frontmost_application_if",
-              "bundle_identifers": [
+              "bundle_identifiers": [
                 "^com\\.apple\\.finder$",
                 "^com\\.apple\\.Preview$",
                 "^com\\.apple\\.Safari$"
@@ -1402,7 +1402,7 @@
           "conditions": [
             {
               "type": "frontmost_application_if",
-              "bundle_identifers": [
+              "bundle_identifiers": [
                 "^com\\.apple\\.finder$",
                 "^com\\.apple\\.Preview$",
                 "^com\\.apple\\.Safari$"
@@ -1426,7 +1426,7 @@
           "conditions": [
             {
               "type": "frontmost_application_if",
-              "bundle_identifers": [
+              "bundle_identifiers": [
                 "^com\\.apple\\.finder$",
                 "^com\\.apple\\.Preview$",
                 "^com\\.apple\\.Safari$"
@@ -1455,7 +1455,7 @@
           "conditions": [
             {
               "type": "frontmost_application_if",
-              "bundle_identifers": [
+              "bundle_identifiers": [
                 "^com\\.apple\\.finder$",
                 "^com\\.apple\\.Preview$",
                 "^com\\.apple\\.Safari$"
@@ -1484,7 +1484,7 @@
           "conditions": [
             {
               "type": "frontmost_application_if",
-              "bundle_identifers": [
+              "bundle_identifiers": [
                 "^com\\.apple\\.finder$",
                 "^com\\.apple\\.Preview$",
                 "^com\\.apple\\.Safari$"
@@ -1523,7 +1523,7 @@
           "conditions": [
             {
               "type": "frontmost_application_if",
-              "bundle_identifers": [
+              "bundle_identifiers": [
                 "^com\\.microsoft\\.Word$",
                 "^com\\.microsoft\\.Powerpoint$",
                 "^com\\.microsoft\\.Excel$"
@@ -1578,7 +1578,7 @@
           "conditions": [
             {
               "type": "frontmost_application_if",
-              "bundle_identifers": [
+              "bundle_identifiers": [
                 "^com\\.microsoft\\.Word$",
                 "^com\\.microsoft\\.Powerpoint$",
                 "^com\\.microsoft\\.Excel$"
@@ -1642,7 +1642,7 @@
           "conditions": [
             {
               "type": "frontmost_application_if",
-              "bundle_identifers": [
+              "bundle_identifiers": [
                 "^com\\.microsoft\\.Word$",
                 "^com\\.microsoft\\.Powerpoint$",
                 "^com\\.microsoft\\.Excel$"
@@ -1707,7 +1707,7 @@
           "conditions": [
             {
               "type": "frontmost_application_if",
-              "bundle_identifers": [
+              "bundle_identifiers": [
                 "^com\\.microsoft\\.Word$",
                 "^com\\.microsoft\\.Powerpoint$",
                 "^com\\.microsoft\\.Excel$"
@@ -1775,7 +1775,7 @@
           "conditions": [
             {
               "type": "frontmost_application_if",
-              "bundle_identifers": [
+              "bundle_identifiers": [
                 "^com\\.microsoft\\.Word$",
                 "^com\\.microsoft\\.Powerpoint$",
                 "^com\\.microsoft\\.Excel$"
@@ -1821,7 +1821,7 @@
           "conditions": [
             {
               "type": "frontmost_application_unless",
-              "bundle_identifers": [
+              "bundle_identifiers": [
                 "^md\\.obsidian$"
               ]
             }
@@ -1850,7 +1850,7 @@
           "conditions": [
             {
               "type": "frontmost_application_if",
-              "bundle_identifers": [
+              "bundle_identifiers": [
                 "^md\\.obsidian$"
               ]
             }
@@ -1879,7 +1879,7 @@
             {
               "software_function": {
                 "open_application": {
-                  "bundle_identifer": "notion.id"
+                  "bundle_identifier": "notion.id"
                 }
               }
             }
@@ -1887,7 +1887,7 @@
           "conditions": [
             {
               "type": "frontmost_application_unless",
-              "bundle_identifers": [
+              "bundle_identifiers": [
                 "^notion\\.id$"
               ]
             }
@@ -1916,7 +1916,7 @@
           "conditions": [
             {
               "type": "frontmost_application_if",
-              "bundle_identifers": [
+              "bundle_identifiers": [
                 "^notion\\.id$"
               ]
             }
@@ -1945,7 +1945,7 @@
             {
               "software_function": {
                 "open_application": {
-                  "bundle_identifer": "notion.id"
+                  "bundle_identifier": "notion.id"
                 }
               }
             }
@@ -1953,7 +1953,7 @@
           "conditions": [
             {
               "type": "frontmost_application_unless",
-              "bundle_identifers": [
+              "bundle_identifiers": [
                 "^notion\\.id$"
               ]
             }
@@ -1982,7 +1982,7 @@
           "conditions": [
             {
               "type": "frontmost_application_if",
-              "bundle_identifers": [
+              "bundle_identifiers": [
                 "^notion\\.id$"
               ]
             }
@@ -2011,7 +2011,7 @@
             {
               "software_function": {
                 "open_application": {
-                  "bundle_identifer": "com.google.Chrome"
+                  "bundle_identifier": "com.google.Chrome"
                 }
               }
             }
@@ -2019,7 +2019,7 @@
           "conditions": [
             {
               "type": "frontmost_application_unless",
-              "bundle_identifers": [
+              "bundle_identifiers": [
                 "^com\\.google\\.Chrome$"
               ]
             }
@@ -2048,7 +2048,7 @@
           "conditions": [
             {
               "type": "frontmost_application_if",
-              "bundle_identifers": [
+              "bundle_identifiers": [
                 "^com\\.google\\.Chrome$"
               ]
             }
@@ -2077,7 +2077,7 @@
             {
               "software_function": {
                 "open_application": {
-                  "bundle_identifer": "com.googlecode.iterm2"
+                  "bundle_identifier": "com.googlecode.iterm2"
                 }
               }
             }
@@ -2085,7 +2085,7 @@
           "conditions": [
             {
               "type": "frontmost_application_unless",
-              "bundle_identifers": [
+              "bundle_identifiers": [
                 "^com\\.googlecode\\.iterm2$"
               ]
             }
@@ -2114,7 +2114,7 @@
           "conditions": [
             {
               "type": "frontmost_application_if",
-              "bundle_identifers": [
+              "bundle_identifiers": [
                 "^com\\.googlecode\\.iterm2$"
               ]
             }
@@ -2143,7 +2143,7 @@
             {
               "software_function": {
                 "open_application": {
-                  "bundle_identifer": "com.tinyspeck.slackmacgap"
+                  "bundle_identifier": "com.tinyspeck.slackmacgap"
                 }
               }
             }
@@ -2151,7 +2151,7 @@
           "conditions": [
             {
               "type": "frontmost_application_unless",
-              "bundle_identifers": [
+              "bundle_identifiers": [
                 "^com\\.tinyspeck\\.slackmacgap$"
               ]
             }
@@ -2180,7 +2180,7 @@
           "conditions": [
             {
               "type": "frontmost_application_if",
-              "bundle_identifers": [
+              "bundle_identifiers": [
                 "^com\\.tinyspeck\\.slackmacgap$"
               ]
             }
@@ -2951,7 +2951,7 @@
           "conditions": [
             {
               "type": "frontmost_application_unless",
-              "bundle_identifers": [
+              "bundle_identifiers": [
                 "^org\\.gnu\\.Emacs$",
                 "^org\\.gnu\\.AquamacsEmacs$",
                 "^org\\.gnu\\.Aquamacs$",
@@ -3015,7 +3015,7 @@
           "conditions": [
             {
               "type": "frontmost_application_unless",
-              "bundle_identifers": [
+              "bundle_identifiers": [
                 "^org\\.gnu\\.Emacs$",
                 "^org\\.gnu\\.AquamacsEmacs$",
                 "^org\\.gnu\\.Aquamacs$",
@@ -3079,7 +3079,7 @@
           "conditions": [
             {
               "type": "frontmost_application_unless",
-              "bundle_identifers": [
+              "bundle_identifiers": [
                 "^org\\.gnu\\.Emacs$",
                 "^org\\.gnu\\.AquamacsEmacs$",
                 "^org\\.gnu\\.Aquamacs$",
