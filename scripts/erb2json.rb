@@ -137,36 +137,36 @@ def each_key(source_keys_list: :source_keys_list, dest_keys_list: :dest_keys_lis
 end
 
 def frontmost_application(type, app_aliases, as_json=true)
-  finder_bundle_identifers = [
+  finder_bundle_identifiers = [
     '^com\.apple\.finder$',
   ]
 
-  preview_bundle_identifers = [
+  preview_bundle_identifiers = [
     '^com\.apple\.Preview$',
   ]
 
-  safari_bundle_identifers = [
+  safari_bundle_identifiers = [
     '^com\.apple\.Safari$',
   ]
 
-  chrome_bundle_identifers = [
+  chrome_bundle_identifiers = [
     '^com\.google\.Chrome$'
   ]
 
-  browser_bundle_identifers = [
+  browser_bundle_identifiers = [
     '^org\.mozilla\.firefox$',
     '^org\.waterfoxproject\.waterfox$',
     '^com\.google\.Chrome$'
   ]
 
-  emacs_bundle_identifers = [
+  emacs_bundle_identifiers = [
     '^org\.gnu\.Emacs$',
     '^org\.gnu\.AquamacsEmacs$',
     '^org\.gnu\.Aquamacs$',
     '^org\.pqrs\.unknownapp.conkeror$',
   ]
 
-  remote_desktop_bundle_identifers = [
+  remote_desktop_bundle_identifiers = [
     '^com\.microsoft\.rdc$',
     '^com\.microsoft\.rdc\.mac$',
     '^com\.microsoft\.rdc\.osx\.beta$',
@@ -180,21 +180,21 @@ def frontmost_application(type, app_aliases, as_json=true)
     '^com\.2X\.Client\.Mac$',
   ]
 
-  iterm2_bundle_identifers = [
+  iterm2_bundle_identifiers = [
     '^com\.googlecode\.iterm2$',
   ]
 
-  terminal_bundle_identifers = iterm2_bundle_identifers + [
+  terminal_bundle_identifiers = iterm2_bundle_identifiers + [
     '^com\.apple\.Terminal$',
     '^co\.zeit\.hyperterm$',
     '^co\.zeit\.hyper$',
   ]
 
-  vi_bundle_identifers = [
+  vi_bundle_identifiers = [
     '^org\.vim\.', # prefix
   ]
 
-  virtual_machine_bundle_identifers = [
+  virtual_machine_bundle_identifiers = [
     '^com\.vmware\.fusion$',
     '^com\.vmware\.horizon$',
     '^com\.vmware\.view$',
@@ -206,126 +206,126 @@ def frontmost_application(type, app_aliases, as_json=true)
     '^com\.parallels\.winapp\.', # prefix
   ]
 
-  x11_bundle_identifers = [
+  x11_bundle_identifiers = [
     '^org\.x\.X11$',
     '^com\.apple\.x11$',
     '^org\.macosforge\.xquartz\.X11$',
     '^org\.macports\.X11$',
   ]
 
-  word_bundle_identifers = [
+  word_bundle_identifiers = [
     '^com\.microsoft\.Word$'
   ]
-  powerpoint_bundle_identifers = [
+  powerpoint_bundle_identifiers = [
     '^com\.microsoft\.Powerpoint$'
   ]
-  excel_bundle_identifers = [
+  excel_bundle_identifiers = [
     '^com\.microsoft\.Excel$'
   ]
 
-  rdt_bundle_identifers = [
+  rdt_bundle_identifiers = [
     '^com\.microsoft\.rdc.macos$',
   ]
 
-  obsidian_bundle_identifers = [
+  obsidian_bundle_identifiers = [
     '^md\.obsidian$',
   ]
 
-  notion_bundle_identifers = [
+  notion_bundle_identifiers = [
     '^notion\.id$',
   ]
 
 
   # ----------------------------------------
 
-  bundle_identifers = []
+  bundle_identifiers = []
 
   to_array(app_aliases).each do |app_alias|
     case app_alias
     when 'finder'
-      bundle_identifers.concat(finder_bundle_identifers)
+      bundle_identifiers.concat(finder_bundle_identifiers)
 
     when 'preview'
-      bundle_identifers.concat(preview_bundle_identifers)
+      bundle_identifiers.concat(preview_bundle_identifiers)
 
     when 'mac_tab'
-      bundle_identifers.concat(finder_bundle_identifers)
-      bundle_identifers.concat(preview_bundle_identifers)
-      bundle_identifers.concat(safari_bundle_identifers)
+      bundle_identifiers.concat(finder_bundle_identifiers)
+      bundle_identifiers.concat(preview_bundle_identifiers)
+      bundle_identifiers.concat(safari_bundle_identifiers)
 
     when 'iterm2'
-      bundle_identifers.concat(iterm2_bundle_identifers)
+      bundle_identifiers.concat(iterm2_bundle_identifiers)
 
     when 'terminal'
-      bundle_identifers.concat(terminal_bundle_identifers)
+      bundle_identifiers.concat(terminal_bundle_identifiers)
 
     when 'emacs'
-      bundle_identifers.concat(emacs_bundle_identifers)
+      bundle_identifiers.concat(emacs_bundle_identifiers)
 
     when 'emacs_key_bindings_exception'
-      bundle_identifers.concat(emacs_bundle_identifers)
-      bundle_identifers.concat(remote_desktop_bundle_identifers)
-      bundle_identifers.concat(terminal_bundle_identifers)
-      bundle_identifers.concat(vi_bundle_identifers)
-      bundle_identifers.concat(virtual_machine_bundle_identifers)
-      bundle_identifers.concat(x11_bundle_identifers)
+      bundle_identifiers.concat(emacs_bundle_identifiers)
+      bundle_identifiers.concat(remote_desktop_bundle_identifiers)
+      bundle_identifiers.concat(terminal_bundle_identifiers)
+      bundle_identifiers.concat(vi_bundle_identifiers)
+      bundle_identifiers.concat(virtual_machine_bundle_identifiers)
+      bundle_identifiers.concat(x11_bundle_identifiers)
 
     when 'remote_desktop'
-      bundle_identifers.concat(remote_desktop_bundle_identifers)
+      bundle_identifiers.concat(remote_desktop_bundle_identifiers)
 
     when 'vi'
-      bundle_identifers.concat(vi_bundle_identifers)
+      bundle_identifiers.concat(vi_bundle_identifiers)
 
     when 'virtual_machine'
-      bundle_identifers.concat(virtual_machine_bundle_identifers)
+      bundle_identifiers.concat(virtual_machine_bundle_identifiers)
 
     when 'chrome'
-      bundle_identifers.concat(chrome_bundle_identifers)
+      bundle_identifiers.concat(chrome_bundle_identifiers)
 
     when 'browser'
-      bundle_identifers.concat(browser_bundle_identifers)
+      bundle_identifiers.concat(browser_bundle_identifiers)
 
     when 'word'
-      bundle_identifers.concat(word_bundle_identifers)
+      bundle_identifiers.concat(word_bundle_identifiers)
 
     when 'powerpoint'
-      bundle_identifers.concat(powerpoint_bundle_identifers)
+      bundle_identifiers.concat(powerpoint_bundle_identifiers)
 
     when 'excel'
-      bundle_identifers.concat(excel_bundle_identifers)
+      bundle_identifiers.concat(excel_bundle_identifiers)
 
     when 'office'
-      bundle_identifers.concat(word_bundle_identifers)
-      bundle_identifers.concat(powerpoint_bundle_identifers)
-      bundle_identifers.concat(excel_bundle_identifers)
+      bundle_identifiers.concat(word_bundle_identifiers)
+      bundle_identifiers.concat(powerpoint_bundle_identifiers)
+      bundle_identifiers.concat(excel_bundle_identifiers)
 
     when 'vim_emu_exception'
-      bundle_identifers.concat(emacs_bundle_identifers)
-      bundle_identifers.concat(remote_desktop_bundle_identifers)
-      bundle_identifers.concat(terminal_bundle_identifers)
-      bundle_identifers.concat(vi_bundle_identifers)
-      bundle_identifers.concat(virtual_machine_bundle_identifers)
-      bundle_identifers.concat(x11_bundle_identifers)
-      bundle_identifers.concat(browser_bundle_identifers)
+      bundle_identifiers.concat(emacs_bundle_identifiers)
+      bundle_identifiers.concat(remote_desktop_bundle_identifiers)
+      bundle_identifiers.concat(terminal_bundle_identifiers)
+      bundle_identifiers.concat(vi_bundle_identifiers)
+      bundle_identifiers.concat(virtual_machine_bundle_identifiers)
+      bundle_identifiers.concat(x11_bundle_identifiers)
+      bundle_identifiers.concat(browser_bundle_identifiers)
 
     when 'rdt'
-      bundle_identifers.concat(rdt_bundle_identifers)
+      bundle_identifiers.concat(rdt_bundle_identifiers)
 
     when 'obsidian'
-      bundle_identifers.concat(obsidian_bundle_identifers)
+      bundle_identifiers.concat(obsidian_bundle_identifiers)
 
     when 'notion'
-      bundle_identifers.concat(notion_bundle_identifers)
+      bundle_identifiers.concat(notion_bundle_identifiers)
 
     else
       $stderr << "unknown app_alias: #{app_alias}\n"
     end
   end
 
-  unless bundle_identifers.empty?
+  unless bundle_identifiers.empty?
     data = {
       type:  type,
-      bundle_identifers: bundle_identifers
+      bundle_identifiers: bundle_identifiers
     }
     make_data(data, as_json)
   end
@@ -359,7 +359,7 @@ def device(type, device_aliases, as_json=true)
   unless ids.empty?
     data = {
       type:  type,
-      identifers: ids
+      identifiers: ids
     }
     make_data(data, as_json)
   end
@@ -405,17 +405,17 @@ def input_source_unless(input_source_aliases, as_json=true)
   input_source('input_source_unless', input_source_aliases, as_json)
 end
 
-def toggle_app(identifer, key_code, mandatory_modifiers=[], optional_modifiers=[], as_json=true)
-  identifer_regexp = "^#{identifer.gsub('.', '\.')}$"
+def toggle_app(identifier, key_code, mandatory_modifiers=[], optional_modifiers=[], as_json=true)
+  identifier_regexp = "^#{identifier.gsub('.', '\.')}$"
   data = [
     {
       "type": "basic",
       "from": from(key_code, mandatory_modifiers, optional_modifiers, false),
-      "to": [{"software_function": {"open_application": {"bundle_identifer": identifer}}}],
+      "to": [{"software_function": {"open_application": {"bundle_identifier": identifier}}}],
       "conditions": [
         {
           "type": "frontmost_application_unless",
-          "bundle_identifers": [identifer_regexp]
+          "bundle_identifiers": [identifier_regexp]
         }
       ]
     },
@@ -426,7 +426,7 @@ def toggle_app(identifer, key_code, mandatory_modifiers=[], optional_modifiers=[
       "conditions": [
         {
           "type": "frontmost_application_if",
-          "bundle_identifers": [identifer_regexp]
+          "bundle_identifiers": [identifier_regexp]
         }
       ]
     }
