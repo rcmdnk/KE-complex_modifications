@@ -405,6 +405,36 @@ def input_source_unless(input_source_aliases, as_json=true)
   input_source('input_source_unless', input_source_aliases, as_json)
 end
 
+def toggle_app(identifier, key_code, mandatory_modifiers=[], optional_modifiers=[], as_json=true)
+  identifier_regexp = "^#{identifier.gsub('.', '\.')}$"
+  data = [
+    {
+      "type": "basic",
+      "from": from(key_code, mandatory_modifiers, optional_modifiers, false),
+      "to": [{"software_function": {"open_application": {"bundle_identifier": identifier}}}],
+      "conditions": [
+        {
+          "type": "frontmost_application_unless",
+          "bundle_identifers": [identifier_regexp]
+        }
+      ]
+    },
+    {
+      "type": "basic",
+      "from": from(key_code, mandatory_modifiers, optional_modifiers, false),
+      "to": [{"software_function": {"open_application": {"frontmost_application_history_index": 1}}}],
+      "conditions": [
+        {
+          "type": "frontmost_application_if",
+          "bundle_identifers": [identifier_regexp]
+        }
+      ]
+    }
+  ]
+  make_data(data, as_json)
+end
+
+
 def check_set_variable(array)
   mode = ""
   array.each do |k|

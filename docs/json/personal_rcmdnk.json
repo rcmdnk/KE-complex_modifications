@@ -1786,7 +1786,7 @@
       ]
     },
     {
-      "description": "For Obsidian",
+      "description": "For Obsidian Search",
       "extra_descriptions": [
         "Cmd-Ctrl-e to sarch for in obsidian. Bring up obsidan frontmost if not."
       ],
@@ -1855,6 +1855,43 @@
               ]
             }
           ]
+        }
+      ]
+    },
+    {
+      "description": "Toggle Obsidian",
+      "extra_descriptions": [
+        "Cmd-Ctrl-q to toggle Obsidian."
+      ],
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "q",
+            "modifiers": {
+              "mandatory": [
+                "control",
+                "command"
+              ]
+            }
+          },
+          "to": [
+            {
+              "software_function": {
+                "open_application": {
+                  "bundle_identifier": "notion.id"
+                }
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifers": [
+                "^notion\\.id$"
+              ]
+            }
+          ]
         },
         {
           "type": "basic",
@@ -1869,10 +1906,18 @@
           },
           "to": [
             {
-              "key_code": "q",
-              "modifiers": [
-                "command",
-                "shift"
+              "software_function": {
+                "open_application": {
+                  "frontmost_application_history_index": 1
+                }
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifers": [
+                "^notion\\.id$"
               ]
             }
           ]
@@ -1880,9 +1925,9 @@
       ]
     },
     {
-      "description": "For Notion",
+      "description": "Toggle Notion",
       "extra_descriptions": [
-        "Cmd-Ctrl-g to toggle Notion."
+        "Cmd-Ctrl-n to toggle Notion."
       ],
       "manipulators": [
         {
@@ -1900,7 +1945,7 @@
             {
               "software_function": {
                 "open_application": {
-                  "file_path": "/Applications/Notion.app"
+                  "bundle_identifier": "notion.id"
                 }
               }
             }
@@ -1908,7 +1953,7 @@
           "conditions": [
             {
               "type": "frontmost_application_unless",
-              "bundle_identifiers": [
+              "bundle_identifers": [
                 "^notion\\.id$"
               ]
             }
@@ -1937,8 +1982,206 @@
           "conditions": [
             {
               "type": "frontmost_application_if",
-              "bundle_identifiers": [
+              "bundle_identifers": [
                 "^notion\\.id$"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Toggle Chrome",
+      "extra_descriptions": [
+        "Cmd-Ctrl-c to toggle Chrome."
+      ],
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "c",
+            "modifiers": {
+              "mandatory": [
+                "control",
+                "command"
+              ]
+            }
+          },
+          "to": [
+            {
+              "software_function": {
+                "open_application": {
+                  "bundle_identifier": "com.google.Chrome"
+                }
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifers": [
+                "^com\\.google\\.Chrome$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "c",
+            "modifiers": {
+              "mandatory": [
+                "control",
+                "command"
+              ]
+            }
+          },
+          "to": [
+            {
+              "software_function": {
+                "open_application": {
+                  "frontmost_application_history_index": 1
+                }
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifers": [
+                "^com\\.google\\.Chrome$"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Toggle iTerm2",
+      "extra_descriptions": [
+        "Cmd-Ctrl-t to toggle iTerm2."
+      ],
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "t",
+            "modifiers": {
+              "mandatory": [
+                "control",
+                "command"
+              ]
+            }
+          },
+          "to": [
+            {
+              "software_function": {
+                "open_application": {
+                  "bundle_identifier": "com.googlecode.iterm2"
+                }
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifers": [
+                "^com\\.googlecode\\.iterm2$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "t",
+            "modifiers": {
+              "mandatory": [
+                "control",
+                "command"
+              ]
+            }
+          },
+          "to": [
+            {
+              "software_function": {
+                "open_application": {
+                  "frontmost_application_history_index": 1
+                }
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifers": [
+                "^com\\.googlecode\\.iterm2$"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Toggle Slack",
+      "extra_descriptions": [
+        "Cmd-Ctrl-s to toggle Slack."
+      ],
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "s",
+            "modifiers": {
+              "mandatory": [
+                "control",
+                "command"
+              ]
+            }
+          },
+          "to": [
+            {
+              "software_function": {
+                "open_application": {
+                  "bundle_identifier": "com.tinyspeck.slackmacgap"
+                }
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifers": [
+                "^com\\.tinyspeck\\.slackmacgap$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "s",
+            "modifiers": {
+              "mandatory": [
+                "control",
+                "command"
+              ]
+            }
+          },
+          "to": [
+            {
+              "software_function": {
+                "open_application": {
+                  "frontmost_application_history_index": 1
+                }
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifers": [
+                "^com\\.tinyspeck\\.slackmacgap$"
               ]
             }
           ]

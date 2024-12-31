@@ -258,7 +258,7 @@
       ]
     },
     {
-      "description": "For Obsidian",
+      "description": "For Obsidian Search",
       "extra_descriptions": [
         "Cmd-Ctrl-e to sarch for in obsidian. Bring up obsidan frontmost if not."
       ],
@@ -274,33 +274,43 @@
           "from": <%= from("e", ["control", "command"]) %>,
           "to": <%= to([["f", ["command", "shift"]]]) %>,
           "conditions": [ <%= frontmost_application_if("obsidian") %> ]
-        },
-        {
-          "type": "basic",
-          "from": <%= from("q", ["control", "command"]) %>,
-          "to": <%= to([["q", ["command", "shift"]]]) %>
         }
       ]
     },
     {
-      "description": "For Notion",
+      "description": "Toggle Obsidian",
       "extra_descriptions": [
-        "Cmd-Ctrl-g to toggle Notion."
+        "Cmd-Ctrl-q to toggle Obsidian."
       ],
-      "manipulators": [
-        {
-          "type": "basic",
-          "from": <%= from("g", ["control", "command"]) %>,
-          "to": [{"software_function": {"open_application": {"file_path": "/Applications/Notion.app"}}}],
-          "conditions": [ <%= frontmost_application_unless("notion") %> ]
-        },
-        {
-          "type": "basic",
-          "from": <%= from("g", ["control", "command"]) %>,
-          "to": [{"software_function": {"open_application": {"frontmost_application_history_index": 1}}}],
-          "conditions": [ <%= frontmost_application_if("notion") %> ]
-        }
-      ]
+      "manipulators": <%= toggle_app("notion.id", "q", ["control", "command"]) %>
+    },
+    {
+      "description": "Toggle Notion",
+      "extra_descriptions": [
+        "Cmd-Ctrl-n to toggle Notion."
+      ],
+      "manipulators": <%= toggle_app("notion.id", "g", ["control", "command"]) %>
+    },
+    {
+      "description": "Toggle Chrome",
+      "extra_descriptions": [
+        "Cmd-Ctrl-c to toggle Chrome."
+      ],
+      "manipulators": <%= toggle_app("com.google.Chrome", "c", ["control", "command"]) %>
+    },
+    {
+      "description": "Toggle iTerm2",
+      "extra_descriptions": [
+        "Cmd-Ctrl-t to toggle iTerm2."
+      ],
+      "manipulators": <%= toggle_app("com.googlecode.iterm2", "t", ["control", "command"]) %>
+    },
+    {
+      "description": "Toggle Slack",
+      "extra_descriptions": [
+        "Cmd-Ctrl-s to toggle Slack."
+      ],
+      "manipulators": <%= toggle_app("com.tinyspeck.slackmacgap", "s", ["control", "command"]) %>
     },
     {
       "description": "Change cmd-ctrl-h/j/k/l to arrow keys",
