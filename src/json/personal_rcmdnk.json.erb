@@ -266,7 +266,7 @@
         {
           "type": "basic",
           "from": <%= from("e", ["control", "command"]) %>,
-          "to": <%= to([["q", ["command", "shift"]], ["f", ["command", "shift"]]]) %>,
+          "to": <%= to([{"software_function": {"open_application": {"bundle_identifier": "md.obsidian"}}}, ["f", ["command", "shift"]]]) %>,
           "conditions": [ <%= frontmost_application_unless("obsidian") %> ]
         },
         {
@@ -282,7 +282,7 @@
       "extra_descriptions": [
         "Cmd-Ctrl-q to toggle Obsidian."
       ],
-      "manipulators": <%= toggle_app("notion.id", "q", ["control", "command"]) %>
+      "manipulators": <%= toggle_app("md.obsidian", "q", ["control", "command"]) %>
     },
     {
       "description": "Toggle Notion",

@@ -1804,11 +1804,11 @@
           },
           "to": [
             {
-              "key_code": "q",
-              "modifiers": [
-                "command",
-                "shift"
-              ]
+              "software_function": {
+                "open_application": {
+                  "bundle_identifier": "md.obsidian"
+                }
+              }
             },
             {
               "key_code": "f",
@@ -1879,7 +1879,7 @@
             {
               "software_function": {
                 "open_application": {
-                  "bundle_identifier": "notion.id"
+                  "bundle_identifier": "md.obsidian"
                 }
               }
             }
@@ -1888,7 +1888,7 @@
             {
               "type": "frontmost_application_unless",
               "bundle_identifiers": [
-                "^notion\\.id$"
+                "^md\\.obsidian$"
               ]
             }
           ]
@@ -1917,7 +1917,7 @@
             {
               "type": "frontmost_application_if",
               "bundle_identifiers": [
-                "^notion\\.id$"
+                "^md\\.obsidian$"
               ]
             }
           ]
