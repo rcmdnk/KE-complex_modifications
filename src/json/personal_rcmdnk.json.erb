@@ -258,7 +258,7 @@
       ]
     },
     {
-      "description": "For Obsidian Search",
+      "description": "Obsidian Search",
       "extra_descriptions": [
         "Cmd-Ctrl-e to sarch for in obsidian. Bring up obsidan frontmost if not."
       ],
@@ -267,6 +267,11 @@
           "type": "basic",
           "from": <%= from("e", ["control", "command"]) %>,
           "to": <%= to([{"software_function": {"open_application": {"bundle_identifier": "md.obsidian"}}}, ["f", ["command", "shift"]]]) %>,
+          "to_delayed_action": {
+            "to_if_invoked": <%= to([["f", ["command", "shift"]]]) %>,
+            "to_if_canceled": <%= to([{"software_function": {"open_application": {"bundle_identifier": "md.obsidian"}}}]) %>
+          },
+          "parameters": { "basic.to_if_alone_timeout_milliseconds": 100 },
           "conditions": [ <%= frontmost_application_unless("obsidian") %> ]
         },
         {
