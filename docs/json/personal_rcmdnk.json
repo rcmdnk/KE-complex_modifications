@@ -1786,7 +1786,7 @@
       ]
     },
     {
-      "description": "For Obsidian Search",
+      "description": "Obsidian Search",
       "extra_descriptions": [
         "Cmd-Ctrl-e to sarch for in obsidian. Bring up obsidan frontmost if not."
       ],
@@ -1818,6 +1818,29 @@
               ]
             }
           ],
+          "to_delayed_action": {
+            "to_if_invoked": [
+              {
+                "key_code": "f",
+                "modifiers": [
+                  "command",
+                  "shift"
+                ]
+              }
+            ],
+            "to_if_canceled": [
+              {
+                "software_function": {
+                  "open_application": {
+                    "bundle_identifier": "md.obsidian"
+                  }
+                }
+              }
+            ]
+          },
+          "parameters": {
+            "basic.to_if_alone_timeout_milliseconds": 100
+          },
           "conditions": [
             {
               "type": "frontmost_application_unless",
@@ -2766,6 +2789,54 @@
           "to": [
             {
               "shell_command": "osascript ~/Library/Scripts/windowResizeWidthPlus.scpt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Virtual Desktop Actions",
+      "extra_descriptions": [
+        "Move window to left (right) desktop with Ctrl-Shift-Y (O)."
+      ],
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "y",
+            "modifiers": {
+              "mandatory": [
+                "control",
+                "command"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "left_arrow",
+              "modifiers": [
+                "control"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "o",
+            "modifiers": {
+              "mandatory": [
+                "control",
+                "command"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "right_arrow",
+              "modifiers": [
+                "control"
+              ]
             }
           ]
         }
