@@ -385,24 +385,6 @@
       ]
     },
     {
-      "description": "Virtual Desktop Actions",
-      "extra_descriptions": [
-        "Move window to left (right) desktop with Ctrl-Shift-Y (O)."
-      ],
-      "manipulators": [
-        {
-          "type": "basic",
-          "from": <%= from("y", ["control", "command"]) %>,
-          "to": <%= to([["left_arrow", ["control"]]]) %>
-        },
-        {
-          "type": "basic",
-          "from": <%= from("o", ["control", "command"]) %>,
-          "to": <%= to([["right_arrow", ["control"]]]) %>
-        }
-      ]
-    },
-    {
       "description": "Mouse cursor move using Karabiner's functions",
       "extra_descriptions": [
         "Mouse move using Karabiner's functions"
@@ -505,12 +487,12 @@
         <%# Mission Control %>
         {
           "type": "basic",
-          "from": <%= from("h", ["command", "control", "shift"]) %>,
+          "from": <%= from("y", ["command", "control"]) %>,
           "to": <%= to([["left_arrow", ["control"]]]) %>
         },
         {
           "type": "basic",
-          "from": <%= from("l", ["command", "control", "shift"]) %>,
+          "from": <%= from("l", ["command", "control"]) %>,
           "to": <%= to([["right_arrow", ["control"]]]) %>
         },
         <%# Spotlight %>

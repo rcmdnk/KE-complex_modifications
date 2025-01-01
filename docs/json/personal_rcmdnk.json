@@ -2795,54 +2795,6 @@
       ]
     },
     {
-      "description": "Virtual Desktop Actions",
-      "extra_descriptions": [
-        "Move window to left (right) desktop with Ctrl-Shift-Y (O)."
-      ],
-      "manipulators": [
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "y",
-            "modifiers": {
-              "mandatory": [
-                "control",
-                "command"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "left_arrow",
-              "modifiers": [
-                "control"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "o",
-            "modifiers": {
-              "mandatory": [
-                "control",
-                "command"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "right_arrow",
-              "modifiers": [
-                "control"
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
       "description": "Mouse cursor move using Karabiner's functions",
       "extra_descriptions": [
         "Mouse move using Karabiner's functions"
@@ -3289,12 +3241,11 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "h",
+            "key_code": "y",
             "modifiers": {
               "mandatory": [
                 "command",
-                "control",
-                "shift"
+                "control"
               ]
             }
           },
@@ -3314,8 +3265,7 @@
             "modifiers": {
               "mandatory": [
                 "command",
-                "control",
-                "shift"
+                "control"
               ]
             }
           },
