@@ -351,10 +351,10 @@
             ["u", ["control", "shift"], "windowMoveDown"],
             ["i", ["control", "shift"], "windowMoveUp"],
             ["o", ["control", "shift"], "windowMoveRight"],
-            ["y", ["command", "control", "shift"], "winMoveScreenLeft"],
-            ["u", ["command", "control", "shift"], "winMoveScreenDown"],
-            ["i", ["command", "control", "shift"], "winMoveScreenUp"],
-            ["o", ["command", "control", "shift"], "winMoveScreenRight"],
+            ["y", ["command", "control"], "winMoveScreenLeft"],
+            ["u", ["command", "control"], "winMoveScreenDown"],
+            ["i", ["command", "control"], "winMoveScreenUp"],
+            ["o", ["command", "control"], "winMoveScreenRight"],
             ["return_or_enter", ["command", "control"], "wsFull"],
             ["return_or_enter", ["command", "shift"], "wsFull"],
             ["return_or_enter", ["command", "control", "shift"], "wsHalf"],
@@ -487,12 +487,12 @@
         <%# Mission Control %>
         {
           "type": "basic",
-          "from": <%= from("y", ["command", "control"]) %>,
+          "from": <%= from("y", ["command", "control", "shift"]) %>,
           "to": <%= to([["left_arrow", ["control"]]]) %>
         },
         {
           "type": "basic",
-          "from": <%= from("o", ["command", "control"]) %>,
+          "from": <%= from("o", ["command", "control", "shift"]) %>,
           "to": <%= to([["right_arrow", ["control"]]]) %>
         },
         <%# Spotlight %>
