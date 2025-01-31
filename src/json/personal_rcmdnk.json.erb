@@ -292,9 +292,16 @@
     {
       "description": "Toggle Notion",
       "extra_descriptions": [
-        "Cmd-Ctrl-g to toggle Notion."
+        "Cmd-Ctrl-n to toggle Notion."
       ],
-      "manipulators": <%= toggle_app("notion.id", "g", ["control", "command"]) %>
+      "manipulators": <%= toggle_app("notion.id", "n", ["control", "command"]) %>
+    },
+    {
+      "description": "Toggle ChatGPT",
+      "extra_descriptions": [
+        "Cmd-Ctrl-g to toggle ChatGPT."
+      ],
+      "manipulators": <%= toggle_app("com.openai.chat", "g", ["control", "command"]) %>
     },
     {
       "description": "Toggle Chrome",

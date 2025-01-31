@@ -238,6 +238,11 @@ def frontmost_application(type, app_aliases, as_json=true)
     '^notion\.id$',
   ]
 
+  chatgpt_bundle_identifiers = [
+    '^com\.openai\.chat$',
+
+  ]
+
 
   # ----------------------------------------
 
@@ -319,6 +324,9 @@ def frontmost_application(type, app_aliases, as_json=true)
 
     when 'notion'
       bundle_identifiers.concat(notion_bundle_identifiers)
+
+    when 'chatgpt'
+      bundle_identifiers.concat(chatgpt_bundle_identifiers)
 
     else
       $stderr << "unknown app_alias: #{app_alias}\n"
