@@ -2094,6 +2094,72 @@
       ]
     },
     {
+      "description": "Toggle Cursor",
+      "extra_descriptions": [
+        "Cmd-Ctrl-r to toggle Cursor."
+      ],
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "r",
+            "modifiers": {
+              "mandatory": [
+                "control",
+                "command"
+              ]
+            }
+          },
+          "to": [
+            {
+              "software_function": {
+                "open_application": {
+                  "bundle_identifier": "com.todesktop.230313mzl4w4u92"
+                }
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^com\\.todesktop\\.230313mzl4w4u92$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "r",
+            "modifiers": {
+              "mandatory": [
+                "control",
+                "command"
+              ]
+            }
+          },
+          "to": [
+            {
+              "software_function": {
+                "open_application": {
+                  "frontmost_application_history_index": 1
+                }
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.todesktop\\.230313mzl4w4u92$"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "description": "Toggle Chrome",
       "extra_descriptions": [
         "Cmd-Ctrl-c to toggle Chrome."
