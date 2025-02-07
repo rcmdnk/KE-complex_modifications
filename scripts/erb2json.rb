@@ -351,7 +351,8 @@ def frontmost_application_unless(app_aliases, as_json=true)
 end
 
 def device(type, device_aliases, as_json=true)
-  hhkb_id = {vendor_id: 2131}
+  hhkb_id_1 = {vendor_id: 2131}
+  hhkb_id_2 = {vendor_id: 1278} # seems different for different type...?
 
   # ----------------------------------------
 
@@ -360,8 +361,8 @@ def device(type, device_aliases, as_json=true)
   to_array(device_aliases).each do |device_alias|
     case device_alias
     when 'hhkb'
-      ids << hhkb_id
-
+      ids << hhkb_id_1
+      ids << hhkb_id_2
     else
       $stderr << "unknown hhkb_alias: #{device_aliases}\n"
     end

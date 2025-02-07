@@ -21,7 +21,7 @@
           },
           "to_if_alone": <%= to([["grave_accent_and_tilde"]]) %>,
           "to_if_held_down": <%= to([["escape"]]) %>,
-          "conditions": [ <%= device_if("hhkb") %>, <%= frontmost_application_if("emacs_key_bindings_exception") %> ]
+          "conditions": [ <%= frontmost_application_if("emacs_key_bindings_exception") %> ]
         }
       ]
     },

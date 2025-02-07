@@ -38,14 +38,6 @@
           ],
           "conditions": [
             {
-              "type": "device_if",
-              "identifiers": [
-                {
-                  "vendor_id": 2131
-                }
-              ]
-            },
-            {
               "type": "frontmost_application_if",
               "bundle_identifiers": [
                 "^org\\.gnu\\.Emacs$",
