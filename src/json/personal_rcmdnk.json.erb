@@ -282,6 +282,31 @@
       ]
     },
     {
+      "description": "Obsidian minimize",
+      "extra_descriptions": [
+        "Ctrl/Cmd-4 to minimize instead of close, as obsidian's restart takes time."
+      ],
+      "manipulators": [
+        <%=
+          askeys = [
+            ["4", ["command"], "closeToDock"],
+            ["4", ["control"], "closeToDock"],
+          ]
+          manipulators = ""
+          for key in askeys do
+            manipulators += "{
+              \"type\": \"basic\",
+              \"from\": #{from(key[0], key[1])},
+              \"to\": [{\"shell_command\": \"osascript ~/Library/Scripts/#{key[2]}.scpt\"}],
+              \"conditions\": [ #{frontmost_application_if("obsidian")} ]
+            },"
+          end
+          manipulators.chop!
+          manipulators
+        %>
+      ]
+    },
+    {
       "description": "Toggle Obsidian",
       "extra_descriptions": [
         "Cmd-Ctrl-q to toggle Obsidian."

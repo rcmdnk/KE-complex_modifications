@@ -1887,6 +1887,62 @@
       ]
     },
     {
+      "description": "Obsidian minimize",
+      "extra_descriptions": [
+        "Ctrl/Cmd-4 to minimize instead of close, as obsidian's restart takes time."
+      ],
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "4",
+            "modifiers": {
+              "mandatory": [
+                "command"
+              ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "osascript ~/Library/Scripts/closeToDock.scpt"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^md\\.obsidian$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "4",
+            "modifiers": {
+              "mandatory": [
+                "control"
+              ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "osascript ~/Library/Scripts/closeToDock.scpt"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^md\\.obsidian$"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "description": "Toggle Obsidian",
       "extra_descriptions": [
         "Cmd-Ctrl-q to toggle Obsidian."
