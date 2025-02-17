@@ -188,9 +188,9 @@ def frontmost_application(type, app_aliases, as_json=true)
     '^com\.apple\.Terminal$',
     '^co\.zeit\.hyperterm$',
     '^co\.zeit\.hyper$',
-    # Cursor
-    '^com\.todesktop\.230313mzl4w4u92$',
-    '^com\.microsoft\.VSCode',
+    # # Cursor, VSCode
+    # '^com\.todesktop\.230313mzl4w4u92$',
+    # '^com\.microsoft\.VSCode',
   ]
 
   vi_bundle_identifiers = [
