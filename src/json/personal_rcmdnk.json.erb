@@ -94,9 +94,9 @@
       %>
     },
     {
-      "description": "Next/Prev by ctrl-i/o, option-left/right arrow at Finder",
+      "description": "Next/Prev by ctrl-i/o, option-left/right arrow",
       "extra_descriptions": [
-        "For Finder."
+        "For other than terminal, vim, emacs."
       ],
       "manipulators":
       <%=
@@ -105,14 +105,14 @@
           dest_keys_list: ["close_bracket", "open_bracket"],
           from_mandatory_modifiers: ["control"],
           to_modifiers: ["command"],
-          conditions: [frontmost_application_if("finder", false)]
+          conditions: [frontmost_application_unless("emacs_key_bindings_exception", false)],
         )
         manipulators += each_key(
           source_keys_list: ["right_arrow", "left_arrow"],
           dest_keys_list: ["close_bracket", "open_bracket"],
           from_mandatory_modifiers: ["option"],
           to_modifiers: ["command"],
-          conditions: [frontmost_application_if("finder", false)]
+          conditions: [frontmost_application_unless("emacs_key_bindings_exception", false)],
         )
         JSON.generate(manipulators)
       %>
