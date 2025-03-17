@@ -1096,7 +1096,7 @@
       ]
     },
     {
-      "description": "Next/Prev by ctrl-i/o, option-left/right arrow",
+      "description": "Next/Prev by cmd-i/o, cmd-left/right arrow",
       "extra_descriptions": [
         "For other than terminal, vim, emacs."
       ],
@@ -1107,7 +1107,7 @@
             "key_code": "i",
             "modifiers": {
               "mandatory": [
-                "control"
+                "command"
               ]
             }
           },
@@ -1166,7 +1166,7 @@
             "key_code": "o",
             "modifiers": {
               "mandatory": [
-                "control"
+                "command"
               ]
             }
           },

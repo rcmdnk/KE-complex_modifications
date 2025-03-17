@@ -94,7 +94,7 @@
       %>
     },
     {
-      "description": "Next/Prev by ctrl-i/o, option-left/right arrow",
+      "description": "Next/Prev by cmd-i/o, cmd-left/right arrow",
       "extra_descriptions": [
         "For other than terminal, vim, emacs."
       ],
@@ -103,7 +103,7 @@
         manipulators = each_key(
           source_keys_list: ["i", "o"],
           dest_keys_list: ["close_bracket", "open_bracket"],
-          from_mandatory_modifiers: ["control"],
+          from_mandatory_modifiers: ["command"],
           to_modifiers: ["command"],
           conditions: [frontmost_application_unless("emacs_key_bindings_exception", false)],
         )
