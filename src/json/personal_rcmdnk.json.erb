@@ -94,7 +94,7 @@
       %>
     },
     {
-      "description": "Next/Prev by cmd-i/o, cmd-left/right arrow",
+      "description": "Next/Prev by Ctrl-i/o, Ctrl-left/right arrow",
       "extra_descriptions": [
         "For other than terminal, vim, emacs."
       ],
@@ -103,19 +103,32 @@
         manipulators = each_key(
           source_keys_list: ["i", "o"],
           dest_keys_list: ["close_bracket", "open_bracket"],
-          from_mandatory_modifiers: ["command"],
-          to_modifiers: ["command"],
+          from_mandatory_modifiers: ["control"],
+          to_modifiers: ["control"],
           conditions: [frontmost_application_unless("emacs_key_bindings_exception", false)],
         )
         manipulators += each_key(
           source_keys_list: ["right_arrow", "left_arrow"],
           dest_keys_list: ["close_bracket", "open_bracket"],
           from_mandatory_modifiers: ["option"],
-          to_modifiers: ["command"],
+          to_modifiers: ["control"],
           conditions: [frontmost_application_unless("emacs_key_bindings_exception", false)],
         )
         JSON.generate(manipulators)
       %>
+    },
+    {
+      "description": "Cmd-i as Ctrl-i, for IME katakana",
+      "extra_descriptions": [
+        "Ctrl-i is mapped as Next, so use Cmd-i for IME katakana."
+      ],
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": <%= from("i", ["command"]) %>,
+          "to": <%= to([["i", ["control"]]]) %>
+        }
+      ]
     },
     {
       "description": "Disable Ctrl-W at Remote Deskotp Tool",
