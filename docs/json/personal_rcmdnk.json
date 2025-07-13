@@ -1115,7 +1115,7 @@
             {
               "key_code": "close_bracket",
               "modifiers": [
-                "control"
+                "command"
               ]
             }
           ],
@@ -1174,7 +1174,7 @@
             {
               "key_code": "open_bracket",
               "modifiers": [
-                "control"
+                "command"
               ]
             }
           ],
@@ -1233,7 +1233,7 @@
             {
               "key_code": "close_bracket",
               "modifiers": [
-                "control"
+                "command"
               ]
             }
           ],
@@ -1292,7 +1292,7 @@
             {
               "key_code": "open_bracket",
               "modifiers": [
-                "control"
+                "command"
               ]
             }
           ],
